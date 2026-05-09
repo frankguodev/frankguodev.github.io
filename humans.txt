@@ -1,6 +1,6 @@
 /* TEAM */
 Owner: Frank Guo
-Role: AI practitioner, indie developer
+Role: Hands-on AI builder, indie developer
 Website: https://frankguo.dev/
 GitHub: https://github.com/frankguodev
 Contact: hello@frankguo.com

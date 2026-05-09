@@ -1,6 +1,6 @@
 # Frank Guo
 
-Frank Guo is an AI practitioner and indie developer.
+Frank Guo is a hands-on AI builder and indie developer.
 
 The site at https://frankguo.dev/ covers AI tools, AI creation, global content, personal branding, project practice, and privacy-conscious digital life.
 
