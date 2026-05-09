@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://frankguo.dev/sitemap.xml
+Humans: https://frankguo.dev/humans.txt
+LLMs: https://frankguo.dev/llms.txt

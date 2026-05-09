@@ -1,0 +1,4 @@
+Contact: mailto:hello@frankguo.com
+Canonical: https://frankguo.dev/.well-known/security.txt
+Preferred-Languages: en, zh
+Expires: 2027-05-09T00:00:00Z
