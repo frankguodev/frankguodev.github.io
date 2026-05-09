@@ -1,15 +1,17 @@
 # Frank Guo
 
-AI builder exploring global content, practical projects, and privacy-conscious tools.
+AI practitioner and indie developer building practical AI workflows, creation systems, global content, and personal brand infrastructure.
 
-中文：关注 AI 领域、内容出海、项目开发实践与隐私安全，持续构建面向全球用户的工具、内容系统和实践笔记。
+中文：AI 实践者与独立开发者，关注 AI 工具、AI 创作、内容出海、个人品牌构建、项目开发实战与隐私安全。
 
 ## Focus
 
-- AI tools and workflows
-- Global content systems
-- Practical project development
-- Privacy-conscious digital life
+- AI tools, workflows, prompts, agents, and automation
+- AI-assisted writing, image, video, and content creation
+- Global content systems and English-first publishing
+- Personal branding, GitHub presence, and independent websites
+- Real project development, shipping notes, and reusable templates
+- Privacy, account security, domain identity, and email infrastructure
 
 ## Links
 

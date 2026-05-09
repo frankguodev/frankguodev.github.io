@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frank Guo · AI Practitioner & Indie Developer</title>
+  <meta name="description" content="Frank Guo is an AI practitioner and indie developer building practical AI workflows, AI creation systems, global content, personal branding, project practice, and privacy-conscious digital life.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Frank Guo">
+  <meta property="og:description" content="AI practitioner and indie developer focused on AI tools, AI creation, global content, personal branding, project practice, and privacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://frankguo.dev">
+  <meta property="og:image" content="https://frankguo.dev/frankguo-fg-logo-512.png">
+  <link rel="canonical" href="https://frankguo.dev">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #ffffff;
+      --canvas-subtle: #f6f8fa;
+      --border: #d0d7de;
+      --border-muted: #d8dee4;
+      --fg: #24292f;
+      --muted: #57606a;
+      --accent: #0969da;
+      --success: #1f883d;
+      --attention: #9a6700;
+      --danger: #cf222e;
+      --neutral: #6e7781;
+      --shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #24292f;
+      color: #ffffff;
+      border-bottom: 1px solid #1f2328;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(100% - 32px, var(--max));
+      min-height: 64px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: #ffffff;
+      font-weight: 650;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.15;
+    }
+
+    .brand-text small {
+      color: #afb8c1;
+      font-weight: 500;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-link,
+    .lang-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(240, 246, 252, 0.22);
+      border-radius: 6px;
+      background: transparent;
+      color: #ffffff;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .top-link:hover,
+    .lang-button:hover,
+    .top-link:focus-visible,
+    .lang-button:focus-visible {
+      border-color: rgba(240, 246, 252, 0.52);
+      text-decoration: none;
+      outline: none;
+    }
+
+    .subnav {
+      border-bottom: 1px solid var(--border);
+      background: var(--canvas);
+    }
+
+    .subnav-inner {
+      display: flex;
+      gap: 8px;
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 12px;
+      border-bottom: 2px solid transparent;
+      color: var(--fg);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .tab[aria-current="page"] {
+      border-bottom-color: #fd8c73;
+      font-weight: 650;
+    }
+
+    .tab:hover {
+      text-decoration: none;
+      background: var(--canvas-subtle);
+    }
+
+    .page {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 296px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .profile-card {
+      position: sticky;
+      top: 104px;
+    }
+
+    .avatar {
+      width: 100%;
+      max-width: 296px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--canvas-subtle);
+      box-shadow: var(--shadow);
+    }
+
+    .identity {
+      margin-top: 16px;
+    }
+
+    .identity h1 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .handle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    .bio {
+      margin: 16px 0 0;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 34px;
+      margin-top: 16px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--canvas-subtle);
+      color: var(--fg);
+      font-weight: 650;
+      box-shadow: var(--shadow);
+    }
+
+    .button:hover {
+      border-color: #8c959f;
+      text-decoration: none;
+    }
+
+    .profile-meta {
+      display: grid;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 14px;
+      list-style: none;
+    }
+
+    .profile-meta a {
+      color: var(--muted);
+    }
+
+    .profile-meta a:hover {
+      color: var(--accent);
+    }
+
+    .status-box {
+      margin-top: 20px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--canvas);
+      font-size: 14px;
+    }
+
+    .status-box strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .status-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .readme {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--canvas);
+    }
+
+    .readme-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 42px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border-muted);
+      background: var(--canvas-subtle);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .readme-header code {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-weight: 500;
+    }
+
+    .markdown-body {
+      padding: 28px 32px 34px;
+    }
+
+    .markdown-body h2 {
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-muted);
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .markdown-body h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .markdown-body p {
+      margin: 0 0 16px;
+    }
+
+    .markdown-body ul {
+      margin: 0 0 18px;
+      padding-left: 22px;
+    }
+
+    .markdown-body li + li {
+      margin-top: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--canvas-subtle);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 550;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 28px 0 10px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .section-title a {
+      font-size: 13px;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .repo-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 172px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--canvas);
+      color: var(--fg);
+    }
+
+    .repo-card:hover {
+      border-color: #8c959f;
+      text-decoration: none;
+    }
+
+    .repo-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .repo-name {
+      color: var(--accent);
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    .visibility {
+      display: inline-flex;
+      align-items: center;
+      min-height: 20px;
+      padding: 0 7px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 550;
+      white-space: nowrap;
+    }
+
+    .repo-desc {
+      flex: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .repo-foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .lang-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+      border: 1px solid rgba(31, 35, 40, 0.15);
+      border-radius: 50%;
+      vertical-align: -2px;
+      background: var(--accent);
+    }
+
+    .green {
+      background: var(--success);
+    }
+
+    .yellow {
+      background: #f1e05a;
+    }
+
+    .red {
+      background: var(--danger);
+    }
+
+    .gray {
+      background: var(--neutral);
+    }
+
+    .contrib {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--canvas);
+    }
+
+    .contrib-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .heatmap {
+      display: grid;
+      grid-template-columns: repeat(26, 1fr);
+      gap: 4px;
+    }
+
+    .cell {
+      aspect-ratio: 1;
+      border-radius: 2px;
+      background: #ebedf0;
+    }
+
+    .l1 { background: #aceebb; }
+    .l2 { background: #4ac26b; }
+    .l3 { background: #2da44e; }
+    .l4 { background: #116329; }
+
+    .footer {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-muted);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    html[data-current-lang="en"] [data-lang="en"],
+    html[data-current-lang="zh"] [data-lang="zh"] {
+      display: revert;
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner,
+      .subnav-inner,
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar-inner {
+        min-height: 58px;
+      }
+
+      .brand-text small,
+      .top-link {
+        display: none;
+      }
+
+      .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .profile-card {
+        position: static;
+      }
+
+      .profile-head {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 16px;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 92px;
+      }
+
+      .identity {
+        margin-top: 0;
+      }
+
+      .identity h1 {
+        font-size: 24px;
+      }
+
+      .handle {
+        font-size: 18px;
+      }
+
+      .markdown-body {
+        padding: 22px 18px 26px;
+      }
+
+      .repo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .heatmap {
+        grid-template-columns: repeat(13, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/" aria-label="Frank Guo personal brand hub">
+        <img src="/frankguo-fg-logo.svg" alt="" width="34" height="34">
+        <span class="brand-text">
+          <span>Frank Guo</span>
+          <small>frankguo.dev</small>
+        </span>
+      </a>
+      <div class="top-actions">
+        <a class="top-link" href="https://github.com/frankguodev">GitHub</a>
+        <a class="top-link" href="mailto:hello@frankguo.com">Email</a>
+        <button class="lang-button" type="button" data-toggle-lang aria-label="Switch language">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="subnav" aria-label="Profile navigation">
+    <div class="subnav-inner">
+      <a class="tab" href="#overview" aria-current="page">Overview</a>
+        <a class="tab" href="#pinned">Work Areas</a>
+      <a class="tab" href="#activity">Activity</a>
+      <a class="tab" href="https://github.com/frankguodev">Repositories</a>
+    </div>
+  </nav>
+
+  <main class="page" id="overview">
+    <div class="profile-layout">
+      <aside class="profile-card" aria-label="Profile">
+        <div class="profile-head">
+          <img class="avatar" src="/frankguo-fg-logo-512.png" alt="Frank Guo FG logo" width="296" height="296">
+          <div class="identity">
+            <h1>Frank Guo</h1>
+            <p class="handle">frankguodev</p>
+          </div>
+        </div>
+
+        <p class="bio" data-lang="en">AI practitioner and indie developer building practical AI workflows, creation systems, global content, and personal brand infrastructure.</p>
+        <p class="bio" data-lang="zh">AI 实践者与独立开发者，关注 AI 工具、AI 创作、内容出海、个人品牌构建、项目开发实战与隐私安全。</p>
+
+        <a class="button" href="https://github.com/frankguodev" data-lang="en">Follow on GitHub</a>
+        <a class="button" href="https://github.com/frankguodev" data-lang="zh">访问 GitHub</a>
+
+        <ul class="profile-meta">
+          <li>China / Global</li>
+          <li><a href="mailto:hello@frankguo.com">hello@frankguo.com</a></li>
+          <li><a href="https://frankguo.com">frankguo.com</a></li>
+          <li><a href="https://frankguo.dev">frankguo.dev</a></li>
+        </ul>
+
+        <div class="status-box">
+          <strong data-lang="en">Current focus</strong>
+          <strong data-lang="zh">当前关注</strong>
+          <p data-lang="en">Turning AI tools, creation workflows, global content, personal branding, project practice, and privacy notes into public, reusable work.</p>
+          <p data-lang="zh">把 AI 工具、AI 创作、内容出海、个人品牌、项目实战与隐私安全沉淀为公开、可复用的实践。</p>
+        </div>
+      </aside>
+
+      <section aria-label="Technical overview">
+        <article class="readme">
+          <header class="readme-header">
+            <span>README.md</span>
+            <code>frankguodev / frankguodev</code>
+          </header>
+          <div class="markdown-body">
+            <div data-lang="en">
+              <h2>Hi, I am Frank Guo.</h2>
+              <p>
+                I am an AI practitioner and indie developer focused on practical AI tools, AI creation,
+                global content, personal branding, real project development, and privacy-conscious digital life.
+              </p>
+              <p>
+                I use this domain as a clean front door for GitHub repositories, reusable workflows,
+                field notes, templates, and experiments that are useful enough to revisit.
+              </p>
+
+              <h3>What I am building in public</h3>
+              <ul>
+                <li><strong>AI tools:</strong> practical workflows, agents, prompts, automation, and small utilities.</li>
+                <li><strong>AI creation:</strong> writing, image, video, and content production systems powered by AI.</li>
+                <li><strong>Global content:</strong> English-first publishing, content operations, and overseas growth experiments.</li>
+                <li><strong>Personal branding:</strong> GitHub presence, independent websites, identity systems, and public positioning.</li>
+                <li><strong>Project practice:</strong> implementation notes, launch checklists, reusable templates, and shipping records.</li>
+                <li><strong>Privacy and security:</strong> safer accounts, domains, email identity, and personal infrastructure.</li>
+              </ul>
+            </div>
+
+            <div data-lang="zh">
+              <h2>你好，我是 Frank Guo。</h2>
+              <p>
+                我是 AI 实践者与独立开发者，关注 AI 工具、AI 创作、内容出海、个人品牌构建、
+                项目开发实战与隐私安全。
+              </p>
+              <p>
+                我会把这个域名作为清晰的个人品牌入口，连接 GitHub 仓库、可复用工作流、实践笔记、
+                模板和真实项目实验。
+              </p>
+
+              <h3>我正在公开构建的方向</h3>
+              <ul>
+                <li><strong>AI 工具：</strong>实用工作流、agents、提示词、自动化和轻量工具。</li>
+                <li><strong>AI 创作：</strong>AI 写作、图像、视频与内容生产系统。</li>
+                <li><strong>内容出海：</strong>英文优先的发布系统、内容运营与海外增长实验。</li>
+                <li><strong>个人品牌：</strong>GitHub 门面、独立站、身份系统与公开表达。</li>
+                <li><strong>项目实战：</strong>实现笔记、上线清单、可复用模板与真实发布记录。</li>
+                <li><strong>隐私安全：</strong>账号、域名、邮箱身份和个人数字基础设施。</li>
+              </ul>
+            </div>
+
+            <div class="pill-row" aria-label="Topics">
+              <span class="pill">AI Tools</span>
+              <span class="pill">AI Creation</span>
+              <span class="pill">Global Content</span>
+              <span class="pill">Personal Branding</span>
+              <span class="pill">Project Practice</span>
+              <span class="pill">Privacy & Security</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="section-title" id="pinned">
+          <h2 data-lang="en">Public work areas</h2>
+          <h2 data-lang="zh">公开工作方向</h2>
+          <a href="https://github.com/frankguodev?tab=repositories" data-lang="en">View all</a>
+          <a href="https://github.com/frankguodev?tab=repositories" data-lang="zh">查看全部</a>
+        </div>
+
+        <section class="repo-grid" aria-label="Public work areas">
+          <a class="repo-card" href="https://github.com/frankguodev/frankguodev">
+            <div class="repo-top">
+              <span class="repo-name">frankguodev</span>
+              <span class="visibility">Public</span>
+            </div>
+            <p class="repo-desc" data-lang="en">Profile README, identity index, contact links, and current public positioning.</p>
+            <p class="repo-desc" data-lang="zh">个人 Profile README、身份索引、联系方式与当前公开定位。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot gray"></span>Markdown</span>
+              <span>Profile</span>
+            </div>
+          </a>
+
+          <a class="repo-card" href="https://github.com/frankguodev/frankguodev.github.io">
+            <div class="repo-top">
+              <span class="repo-name">frankguodev.github.io</span>
+              <span class="visibility">Public</span>
+            </div>
+            <p class="repo-desc" data-lang="en">The source repository for frankguo.dev, this personal brand and GitHub entry point.</p>
+            <p class="repo-desc" data-lang="zh">frankguo.dev 的源代码仓库，也是这个个人品牌与 GitHub 入口页。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot"></span>HTML</span>
+              <span>GitHub Pages</span>
+            </div>
+          </a>
+
+          <a class="repo-card" href="https://github.com/frankguodev?tab=repositories&q=ai">
+            <div class="repo-top">
+              <span class="repo-name">AI tools & workflows</span>
+              <span class="visibility">Focus</span>
+            </div>
+            <p class="repo-desc" data-lang="en">Reusable AI workflows, prompts, agents, automation patterns, and small tools for real projects.</p>
+            <p class="repo-desc" data-lang="zh">面向真实项目的 AI 工作流、提示词、agents、自动化模式和轻量工具。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot yellow"></span>Docs</span>
+              <span>AI</span>
+            </div>
+          </a>
+
+          <a class="repo-card" href="https://github.com/frankguodev?tab=repositories&q=content">
+            <div class="repo-top">
+              <span class="repo-name">AI creation & global content</span>
+              <span class="visibility">Focus</span>
+            </div>
+            <p class="repo-desc" data-lang="en">AI-assisted writing, visual creation, English-first publishing systems, and overseas content experiments.</p>
+            <p class="repo-desc" data-lang="zh">AI 辅助写作、视觉创作、英文优先发布系统与海外内容实验。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot gray"></span>Markdown</span>
+              <span>Creation</span>
+            </div>
+          </a>
+
+          <a class="repo-card" href="https://github.com/frankguodev?tab=repositories&q=brand">
+            <div class="repo-top">
+              <span class="repo-name">personal-brand-systems</span>
+              <span class="visibility">Focus</span>
+            </div>
+            <p class="repo-desc" data-lang="en">GitHub profile design, independent websites, domain identity, positioning, and public trust signals.</p>
+            <p class="repo-desc" data-lang="zh">GitHub 主页设计、独立站、域名身份、个人定位与公开信任信号。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot green"></span>Practice</span>
+              <span>Brand</span>
+            </div>
+          </a>
+
+          <a class="repo-card" href="https://github.com/frankguodev?tab=repositories&q=privacy">
+            <div class="repo-top">
+              <span class="repo-name">project-practice & privacy</span>
+              <span class="visibility">Focus</span>
+            </div>
+            <p class="repo-desc" data-lang="en">Project logs, shipping checklists, account security, domain identity, and safer personal infrastructure notes.</p>
+            <p class="repo-desc" data-lang="zh">项目日志、上线清单、账号安全、域名身份与更安全的个人基础设施实践。</p>
+            <div class="repo-foot">
+              <span><span class="lang-dot red"></span>Security</span>
+              <span>Shipping</span>
+            </div>
+          </a>
+        </section>
+
+        <section class="contrib" id="activity" aria-label="Activity preview">
+          <div class="contrib-head">
+            <span data-lang="en">Now building · AI practice, content systems, personal brand, and safer infrastructure</span>
+            <span data-lang="zh">正在构建 · AI 实践、内容系统、个人品牌与更安全的数字基础设施</span>
+            <a href="https://github.com/frankguodev">GitHub</a>
+          </div>
+          <div class="heatmap" aria-hidden="true">
+            <span class="cell"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span><span class="cell l3"></span><span class="cell"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span>
+            <span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l3"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span><span class="cell l4"></span><span class="cell"></span><span class="cell l2"></span>
+            <span class="cell"></span><span class="cell l1"></span><span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l2"></span><span class="cell l3"></span><span class="cell"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l2"></span><span class="cell"></span>
+            <span class="cell l1"></span><span class="cell"></span><span class="cell"></span><span class="cell l2"></span><span class="cell l1"></span><span class="cell"></span><span class="cell l3"></span><span class="cell"></span><span class="cell l1"></span><span class="cell l2"></span><span class="cell"></span><span class="cell l1"></span><span class="cell l4"></span>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span data-lang="en">Built for frankguo.dev. GitHub remains the source of record for repositories, notes, and project history.</span>
+          <span data-lang="zh">为 frankguo.dev 构建。GitHub 仍然是仓库、笔记与项目历史的正式记录来源。</span>
+        </footer>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector("[data-toggle-lang]");
+    const saved = localStorage.getItem("frankguo.lang");
+    const defaultLang = saved === "zh" ? "zh" : "en";
+
+    function setLanguage(lang) {
+      root.dataset.currentLang = lang;
+      root.lang = lang === "zh" ? "zh-CN" : "en";
+      toggle.textContent = lang === "zh" ? "English" : "中文";
+      localStorage.setItem("frankguo.lang", lang);
+    }
+
+    setLanguage(defaultLang);
+    toggle.addEventListener("click", () => {
+      setLanguage(root.dataset.currentLang === "zh" ? "en" : "zh");
+    });
+  </script>
+</body>
+</html>

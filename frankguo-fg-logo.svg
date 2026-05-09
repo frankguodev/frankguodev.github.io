@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Frank Guo FG icon</title>
+  <desc id="desc">A minimalist FG monogram for Frank Guo on a deep charcoal square background.</desc>
+  <rect width="1024" height="1024" rx="208" fill="#111827"/>
+  <rect x="96" y="96" width="832" height="832" rx="156" fill="none" stroke="#1f2937" stroke-width="28"/>
+  <g fill="#f8fafc">
+    <rect x="244" y="264" width="84" height="506" rx="30"/>
+    <rect x="244" y="264" width="284" height="84" rx="30"/>
+    <rect x="244" y="472" width="236" height="76" rx="28"/>
+    <rect x="536" y="264" width="262" height="84" rx="30"/>
+    <rect x="536" y="264" width="84" height="506" rx="30"/>
+    <rect x="536" y="686" width="262" height="84" rx="30"/>
+    <rect x="714" y="528" width="84" height="242" rx="30"/>
+    <rect x="642" y="528" width="156" height="76" rx="28"/>
+  </g>
+  <rect x="844" y="694" width="36" height="76" rx="18" fill="#22c55e"/>
+  <circle cx="862" cy="648" r="18" fill="#38bdf8"/>
+</svg>
