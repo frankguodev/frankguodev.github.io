@@ -2,7 +2,7 @@
 
 Frank Guo is a hands-on AI builder and indie developer.
 
-The site at https://frankguo.dev/ covers AI tools, AI creation, global content, personal branding, project practice, and privacy-conscious digital life.
+The site at https://frankguo.dev/ covers AI tools, AI creation, global content, personal branding, and project practice.
 
 ## Primary URLs
 
@@ -19,7 +19,6 @@ The site at https://frankguo.dev/ covers AI tools, AI creation, global content, 
 - Global content systems and English-first publishing
 - Personal brand building, GitHub presence, domain identity, and proof of work
 - Real project development, shipping notes, and reusable templates
-- Privacy, account security, domain identity, and email infrastructure
 
 ## Current public work
 
@@ -28,7 +27,6 @@ The site at https://frankguo.dev/ covers AI tools, AI creation, global content, 
 - Global content system: English-first publishing and overseas platform experiments
 - Personal brand building: GitHub presence, domain identity, content systems, and proof of work
 - Project development practice: implementation notes, launch checklists, and shipping records
-- Privacy-conscious setup: accounts, domains, email identity, and safer infrastructure
 
 ## Language Guidance
 
