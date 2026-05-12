@@ -44,6 +44,7 @@ function pickRepo(repo) {
     private: repo.private,
     fork: repo.fork,
     archived: repo.archived,
+    pushed_at: repo.pushed_at,
     updated_at: repo.updated_at
   };
 }
@@ -60,6 +61,7 @@ function pickEvent(event) {
     } : null,
     payload: {
       ref_type: event.payload?.ref_type,
+      size: event.payload?.size,
       commits: Array.isArray(event.payload?.commits)
         ? event.payload.commits.map((commit) => ({
             sha: commit.sha,
@@ -70,18 +72,51 @@ function pickEvent(event) {
   };
 }
 
+async function getRecentCommits(repos) {
+  const since = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString();
+  const publicOwnerRepos = repos.filter((repo) => !repo.private && !repo.fork && !repo.archived);
+  const rows = await Promise.all(publicOwnerRepos.map(async (repo) => {
+    try {
+      const commits = await getJson(`/repos/${repo.full_name}/commits?author=${encodeURIComponent(githubUser)}&since=${encodeURIComponent(since)}&per_page=100`);
+      const latest = commits[0];
+      return {
+        repo: repo.full_name,
+        html_url: repo.html_url,
+        count: commits.length,
+        latest_at: latest?.commit?.author?.date || latest?.commit?.committer?.date || repo.pushed_at || repo.updated_at
+      };
+    } catch (error) {
+      console.warn(`Could not read commits for ${repo.full_name}: ${error.message}`);
+      return {
+        repo: repo.full_name,
+        html_url: repo.html_url,
+        count: 0,
+        latest_at: repo.pushed_at || repo.updated_at
+      };
+    }
+  }));
+
+  return rows
+    .filter((row) => row.count > 0)
+    .sort((a, b) => b.count - a.count || new Date(b.latest_at) - new Date(a.latest_at))
+    .slice(0, 6);
+}
+
 const [user, repos, events] = await Promise.all([
   getJson(`/users/${githubUser}`),
   getJson(`/users/${githubUser}/repos?type=owner&sort=updated&per_page=100`),
   getJson(`/users/${githubUser}/events/public?per_page=100`)
 ]);
 
+const recentCommits = await getRecentCommits(repos);
+
 const cache = {
   generatedAt: new Date().toISOString(),
   source: "github-actions-cache",
   user: pickUser(user),
   repos: repos.map(pickRepo),
-  events: events.map(pickEvent)
+  events: events.map(pickEvent),
+  recentCommits
 };
 
 await writeFile("github-data.json", `${JSON.stringify(cache, null, 2)}\n`, "utf8");
