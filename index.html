@@ -48,6 +48,8 @@
           "description": "Frank Guo is an AI practitioner and indie developer focused on AI tools, AI creation, personal branding, and hands-on project development.",
           "sameAs": [
             "https://github.com/frankguodev",
+            "https://x.com/frankguodev",
+            "https://www.linkedin.com/in/frankguodev/",
             "https://frankguo.com"
           ],
           "knowsAbout": [
@@ -195,43 +197,119 @@
     .socials {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 16px;
     }
 
     .socials a,
-    .socials span {
+    .socials button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: transparent;
       color: #020408;
+      font: inherit;
+      transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+    }
+
+    .socials .social-icon {
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .socials a:hover,
+    .socials button:hover,
+    .socials button[aria-expanded="true"] {
+      border-color: var(--line-strong);
+      background: var(--panel-soft);
+      color: var(--green-dark);
     }
 
     .socials svg {
-      width: 24px;
-      height: 24px;
+      width: 21px;
+      height: 21px;
       fill: currentColor;
     }
 
-    .socials .email-link svg {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.9;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .socials .x-icon,
+    .socials .linkedin-icon {
+      width: 19px;
+      height: 19px;
     }
 
     .socials .lang-switch {
       width: auto;
-      min-width: 34px;
-      padding: 0 8px;
+      min-width: 32px;
+      height: 26px;
+      padding: 0 7px;
       border: 1px solid var(--line-strong);
       border-radius: 7px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       line-height: 1;
       text-decoration: none;
+    }
+
+    .wechat-popover {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: flex;
+      justify-content: flex-end;
+      padding: 74px max(24px, calc((100vw - var(--max)) / 2 + 24px)) 24px 24px;
+      background: rgba(23, 27, 34, 0);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.16s ease, background-color 0.16s ease;
+    }
+
+    .wechat-popover.is-open {
+      background: rgba(23, 27, 34, 0.08);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .wechat-card {
+      width: min(272px, calc(100vw - 32px));
+      height: max-content;
+      padding: 18px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 18px 42px rgba(23, 27, 34, 0.13);
+      text-align: center;
+      transform: translateY(-8px);
+      transition: transform 0.16s ease;
+    }
+
+    .wechat-popover.is-open .wechat-card {
+      transform: translateY(0);
+    }
+
+    .wechat-title {
+      margin: 0 0 14px;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .wechat-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .wechat-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
     }
 
     .page {
@@ -384,6 +462,13 @@
       align-items: center;
       gap: 13px;
       min-width: 0;
+    }
+
+    .profile-list a {
+      overflow: hidden;
+      color: inherit;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .profile-list svg {
@@ -734,10 +819,38 @@
     }
 
     .footer {
-      padding: 16px 0 0;
+      margin-top: 16px;
       color: var(--muted);
-      text-align: center;
       font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .copyright {
+      text-align: right;
+      white-space: nowrap;
     }
 
     .loading,
@@ -792,19 +905,30 @@
       }
 
       .socials {
-        gap: 10px;
+        gap: 8px;
       }
 
-      .socials a,
-      .socials span {
-        width: 24px;
-        height: 24px;
+      .socials .social-icon {
+        width: 23px;
+        height: 23px;
+      }
+
+      .socials svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .socials .x-icon,
+      .socials .linkedin-icon {
+        width: 17px;
+        height: 17px;
       }
 
       .socials .lang-switch {
-        min-width: 30px;
-        padding: 0 7px;
-        font-size: 11px;
+        min-width: 28px;
+        height: 23px;
+        padding: 0 6px;
+        font-size: 10px;
       }
 
       .page {
@@ -887,6 +1011,14 @@
       .bar {
         grid-column: 1 / -1;
       }
+
+      .footer-inner {
+        align-items: flex-start;
+      }
+
+      .copyright {
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -898,19 +1030,27 @@
         <img src="/frankguo-fg-logo.svg" alt="" width="38" height="38">
       </a>
       <nav class="socials" aria-label="Social links">
-        <a href="https://x.com/frankguodev" aria-label="X">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.4L8 2H2l7.8 11.4L2 22h1.8l6.8-7.8L16 22h6l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.6 9.3h-2.8l-5.3-7.6Z"/></svg>
+        <a class="social-icon" href="https://x.com/frankguodev" aria-label="X">
+          <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.4L8 2H2l7.8 11.4L2 22h1.8l6.8-7.8L16 22h6l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.6 9.3h-2.8l-5.3-7.6Z"/></svg>
         </a>
-        <span aria-label="WeChat">
+        <!-- <a class="social-icon" href="https://www.linkedin.com/in/frankguodev/" aria-label="LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 8.7H2.1V22h3.3V8.7ZM3.8 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.3c0-3.6-1.9-5.8-4.9-5.8-1.6 0-2.8.8-3.4 1.9V8.7h-3.3V22h3.3v-7.1c0-2.1 1.1-3.2 2.7-3.2 1.5 0 2.3 1 2.3 3V22H22v-7.7Z"/></svg>
+        </a> -->
+        <button class="social-icon" type="button" id="wechat-trigger" aria-label="WeChat" aria-expanded="false" aria-controls="wechat-popover">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.1 4.1C4.7 4.1 1.2 7 1.2 10.6c0 2 1.1 3.8 2.8 5l-.7 2.2 2.6-1.3c1 .4 2.1.6 3.2.6.3 0 .7 0 1-.1a6 6 0 0 1-.2-1.5c0-3.2 2.9-5.8 6.5-5.8.2 0 .4 0 .6.1-.5-3.2-3.8-5.7-7.9-5.7Zm-2.6 5.3a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm5.2 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm4.7 1.4c-3.2 0-5.8 2.1-5.8 4.7s2.6 4.7 5.8 4.7c.8 0 1.6-.1 2.3-.4l2.1 1-.5-1.8c1.5-.9 2.5-2.2 2.5-3.8 0-2.3-2.6-4.4-6.4-4.4Zm-1.9 3.6a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Zm4 0a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Z"/></svg>
-        </span>
-        <a class="email-link" href="mailto:hello@frankguo.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"></rect><path d="m4.5 7.3 7.5 6 7.5-6"></path></svg>
-        </a>
+        </button>
         <a class="lang-switch" href="/zh/" hreflang="zh-CN" aria-label="Switch to Chinese">中文</a>
       </nav>
     </div>
   </header>
+
+  <div class="wechat-popover" id="wechat-popover" hidden>
+    <div class="wechat-card" role="dialog" aria-modal="false" aria-labelledby="wechat-title">
+      <p class="wechat-title" id="wechat-title">Please include a note before adding me</p>
+      <img src="/weixin.jpg" alt="WeChat QR code" width="236" height="236" loading="lazy">
+      <p class="wechat-note">Chat or inquire via WeChat</p>
+    </div>
+  </div>
 
   <main class="page" id="main">
     <section class="hero" aria-label="Intro">
@@ -945,6 +1085,10 @@
                 <span id="local-time">--:-- (UTC +08:00)</span>
               </li>
               <li>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.6"></rect><path d="m3.3 5 4.7 3.6L12.7 5"></path></svg>
+                <a href="mailto:hello@frankguo.com">hello@frankguo.com</a>
+              </li>
+              <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.4 7.4a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4ZM10.8 14v-1.2c0-1.7-2.4-3.1-5.4-3.1S0 11.1 0 12.8V14"></path><path d="M11.4 7.5a2.4 2.4 0 1 0-1.1-4.5M16 14v-.9c0-1.3-1.5-2.5-3.6-3"></path></svg>
                 <span id="profile-follow">0 followers · 0 following</span>
               </li>
@@ -954,8 +1098,8 @@
 
         <section class="panel quote" aria-label="Quote">
           <span class="quote-mark">“</span>
-          I turn AI workflows into useful tools.<br>
-          And turn ideas into <strong>shipped products.</strong>
+          Leverage AI to create unlimited possibilities.<br>
+          Recently, I’ve been working on building a global <strong>personal brand</strong>.
         </section>
       </aside>
 
@@ -963,7 +1107,7 @@
         <section class="panel stats" aria-label="GitHub stats">
           <div class="stat">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M4.2 7.5l3.5 2M16.3 14l3.5 2M4.2 16.5l3.5-2M16.3 10l3.5-2"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            <div><strong id="stat-contrib">0</strong><span>Public events<br>returned</span></div>
+            <div><strong id="stat-contrib">0</strong><span>Recent public<br>activity</span></div>
           </div>
           <div class="stat">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="12" rx="2"></rect><path d="M8 19h8M12 17v2"></path></svg>
@@ -1016,10 +1160,17 @@
             <p class="loading">Loading recent public activity...</p>
           </div>
         </section>
+
+        <footer class="footer">
+          <div class="footer-inner">
+            <div class="copyright">© 2026 Frank Guo. All rights reserved.</div>
+            <nav class="footer-links" aria-label="Legal">
+              <a href="/legal.html">Privacy &amp; Disclaimer</a>
+            </nav>
+          </div>
+        </footer>
       </section>
     </div>
-
-    <footer class="footer">© 2026 Frank Guo. All rights reserved.</footer>
   </main>
 
   <script>
@@ -1262,6 +1413,51 @@
     renderFixedProfileText();
     setInterval(updateClock, 60000);
     initGitHub();
+
+    const wechatTrigger = $("#wechat-trigger");
+    const wechatPopover = $("#wechat-popover");
+
+    function closeWeChatPopover() {
+      if (!wechatPopover || !wechatTrigger) return;
+      wechatPopover.classList.remove("is-open");
+      wechatTrigger.setAttribute("aria-expanded", "false");
+      window.setTimeout(() => {
+        if (!wechatPopover.classList.contains("is-open")) {
+          wechatPopover.hidden = true;
+        }
+      }, 160);
+    }
+
+    function openWeChatPopover() {
+      if (!wechatPopover || !wechatTrigger) return;
+      wechatPopover.hidden = false;
+      window.requestAnimationFrame(() => {
+        wechatPopover.classList.add("is-open");
+        wechatTrigger.setAttribute("aria-expanded", "true");
+      });
+    }
+
+    if (wechatTrigger && wechatPopover) {
+      wechatTrigger.addEventListener("click", () => {
+        if (wechatPopover.classList.contains("is-open")) {
+          closeWeChatPopover();
+        } else {
+          openWeChatPopover();
+        }
+      });
+
+      wechatPopover.addEventListener("click", (event) => {
+        if (event.target === wechatPopover) {
+          closeWeChatPopover();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeWeChatPopover();
+        }
+      });
+    }
   </script>
 </body>
 </html>
