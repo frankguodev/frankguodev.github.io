@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Frank Guo · AI 实践者与独立开发者</title>
   <meta name="description" content="Frank Guo 是 AI 实践者与独立开发者，关注 AI 工具、AI 创作、个人品牌构建与项目开发实战。">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#0F1115">
   <meta name="author" content="Frank Guo">
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="Frank Guo, frankguodev, AI 工作流, 开发者笔记, 独立开发, AI 工具, AI 创作, 个人品牌构建, 项目开发实战">
@@ -26,7 +26,8 @@
   <link rel="alternate" hreflang="zh-CN" href="https://frankguo.dev/zh/">
   <link rel="alternate" hreflang="x-default" href="https://frankguo.dev/">
   <link rel="me" href="https://github.com/frankguodev">
-  <link rel="preload" as="image" href="/hero-bg.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero-bg-dark.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/hero-bg.jpg">
   <link rel="preload" as="image" href="/owner-image-512.jpg" imagesrcset="/owner-image-512.jpg 512w, /owner-image-1024.jpg 1024w, /owner_image.jpg 1086w" imagesizes="(max-width: 760px) 118px, 156px" fetchpriority="high">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -95,6 +96,25 @@
   </script>
   <style>
     :root {
+      color-scheme: dark;
+      --bg: #0F1115;
+      --panel: #15171C;
+      --panel-soft: #1B1D22;
+      --line: #272923;
+      --line-strong: #343126;
+      --text: #E2DFD6;
+      --muted: #AAA69B;
+      --muted-soft: #77736A;
+      --green: #F4C84A;
+      --green-dark: #D8AE37;
+      --blue: #D9B861;
+      --orange: #C59B4A;
+      --shadow: 0 22px 54px rgba(0, 0, 0, 0.38);
+      --glow: 0 0 34px rgba(244, 200, 74, 0.12);
+      --max: 1360px;
+    }
+
+    :root[data-theme="light"] {
       color-scheme: light;
       --bg: #ffffff;
       --panel: #ffffff;
@@ -109,7 +129,7 @@
       --blue: #1677b9;
       --orange: #e34c26;
       --shadow: 0 18px 42px rgba(23, 27, 34, 0.05);
-      --max: 1360px;
+      --glow: 0 0 28px rgba(32, 194, 116, 0.10);
     }
 
     * {
@@ -122,11 +142,17 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(244, 200, 74, 0.08), transparent 34vw),
+        linear-gradient(180deg, #111318 0%, var(--bg) 38%, #0B0D10 100%);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.5;
       letter-spacing: 0;
+    }
+
+    :root[data-theme="light"] body {
+      background: var(--bg);
     }
 
     a {
@@ -165,8 +191,12 @@
 
     .topbar {
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(15, 17, 21, 0.86);
       backdrop-filter: blur(12px);
+    }
+
+    :root[data-theme="light"] .topbar {
+      background: rgba(255, 255, 255, 0.94);
     }
 
     .topbar-inner {
@@ -183,9 +213,13 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      color: #080a0d;
+      color: var(--text);
       font-size: 20px;
       font-weight: 800;
+    }
+
+    :root[data-theme="light"] .brand {
+      color: #080a0d;
     }
 
     .brand img {
@@ -197,7 +231,7 @@
     .socials {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 10px;
     }
 
     .socials a,
@@ -208,7 +242,7 @@
       border: 1px solid transparent;
       border-radius: 7px;
       background: transparent;
-      color: #020408;
+      color: var(--muted);
       font: inherit;
       transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease;
     }
@@ -218,6 +252,79 @@
       height: 26px;
       padding: 0;
       cursor: pointer;
+    }
+
+    :root[data-theme="light"] .socials a,
+    :root[data-theme="light"] .socials button {
+      color: #020408;
+    }
+
+    .contact-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: -14px 0 22px;
+    }
+
+    .contact-links a,
+    .contact-links button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      background: var(--panel-soft);
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease, box-shadow 0.14s ease;
+    }
+
+    .contact-links a:hover,
+    .contact-links button:hover,
+    .contact-links button[aria-expanded="true"] {
+      border-color: rgba(244, 200, 74, 0.42);
+      background: rgba(244, 200, 74, 0.10);
+      color: var(--green);
+      box-shadow: var(--glow);
+    }
+
+    :root[data-theme="light"] .contact-links a,
+    :root[data-theme="light"] .contact-links button {
+      background: #ffffff;
+      color: #020408;
+    }
+
+    :root[data-theme="light"] .contact-links a:hover,
+    :root[data-theme="light"] .contact-links button:hover,
+    :root[data-theme="light"] .contact-links button[aria-expanded="true"] {
+      border-color: var(--line-strong);
+      background: var(--panel-soft);
+      color: var(--green-dark);
+      box-shadow: none;
+    }
+
+    .contact-links svg {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+    }
+
+    .contact-links .email-icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.6;
+    }
+
+    .contact-links .x-icon,
+    .contact-links .linkedin-icon {
+      width: 17px;
+      height: 17px;
     }
 
     .socials a:hover,
@@ -253,36 +360,77 @@
       text-decoration: none;
     }
 
+    .theme-toggle {
+      position: relative;
+    }
+
+    .theme-toggle .sun-icon {
+      display: none;
+    }
+
+    .theme-toggle .moon-icon {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .theme-toggle .sun-icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    :root[data-theme="light"] .theme-toggle .moon-icon {
+      display: none;
+    }
+
+    :root[data-theme="light"] .theme-toggle .sun-icon {
+      display: block;
+    }
+
     .wechat-popover {
       position: fixed;
       inset: 0;
       z-index: 80;
-      display: flex;
-      justify-content: flex-end;
-      padding: 74px max(24px, calc((100vw - var(--max)) / 2 + 24px)) 24px 24px;
-      background: rgba(23, 27, 34, 0);
+      background: rgba(15, 17, 21, 0);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.16s ease, background-color 0.16s ease;
     }
 
     .wechat-popover.is-open {
-      background: rgba(23, 27, 34, 0.08);
+      background: rgba(15, 17, 21, 0.42);
       opacity: 1;
       pointer-events: auto;
     }
 
+    :root[data-theme="light"] .wechat-popover {
+      background: rgba(23, 27, 34, 0);
+    }
+
+    :root[data-theme="light"] .wechat-popover.is-open {
+      background: rgba(23, 27, 34, 0.08);
+    }
+
     .wechat-card {
+      position: fixed;
+      top: var(--wechat-top, 88px);
+      left: var(--wechat-left, calc(100vw - 296px));
       width: min(272px, calc(100vw - 32px));
       height: max-content;
       padding: 18px;
       border: 1px solid var(--line-strong);
       border-radius: 8px;
       background: var(--panel);
-      box-shadow: 0 18px 42px rgba(23, 27, 34, 0.13);
+      box-shadow: var(--shadow);
       text-align: center;
       transform: translateY(-8px);
       transition: transform 0.16s ease;
+    }
+
+    :root[data-theme="light"] .wechat-card {
+      box-shadow: 0 18px 42px rgba(23, 27, 34, 0.13);
     }
 
     .wechat-popover.is-open .wechat-card {
@@ -324,9 +472,23 @@
       overflow: hidden;
       border-radius: 8px;
       background:
+        linear-gradient(90deg, rgba(15, 17, 21, 0.92) 0%, rgba(15, 17, 21, 0.74) 34%, rgba(15, 17, 21, 0.10) 68%),
+        url("/hero-bg-dark.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    :root[data-theme="light"] .hero {
+      background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.68) 30%, rgba(255, 255, 255, 0.05) 64%),
         url("/hero-bg.jpg") center / cover no-repeat;
-      box-shadow: var(--shadow);
+    }
+
+    :root[data-theme="light"] .eyebrow {
+      color: #1c232d;
+    }
+
+    :root[data-theme="light"] .hero p {
+      color: #3f4650;
     }
 
     .hero-content {
@@ -341,7 +503,7 @@
       margin: 0 0 10px;
       font-size: 16px;
       font-weight: 650;
-      color: #1c232d;
+      color: var(--text);
     }
 
     .eyebrow span {
@@ -371,7 +533,7 @@
     .hero p {
       max-width: 410px;
       margin: 0;
-      color: #3f4650;
+      color: var(--muted);
       font-size: 15px;
       line-height: 1.75;
     }
@@ -394,15 +556,24 @@
       border: 0;
       border-radius: 6px;
       background: var(--green);
-      color: #ffffff;
+      color: #17130A;
       font-size: 14px;
       font-weight: 760;
-      box-shadow: 0 12px 24px rgba(32, 194, 116, 0.22);
+      box-shadow: 0 12px 26px rgba(244, 200, 74, 0.18);
     }
 
     .primary-button:hover {
       background: var(--green-dark);
+      color: #17130A;
+    }
+
+    :root[data-theme="light"] .primary-button,
+    :root[data-theme="light"] .primary-button:hover {
       color: #ffffff;
+    }
+
+    :root[data-theme="light"] .primary-button {
+      box-shadow: 0 12px 24px rgba(32, 194, 116, 0.22);
     }
 
     .layout {
@@ -415,6 +586,10 @@
     .panel {
       border: 1px solid var(--line);
       background: var(--panel);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    :root[data-theme="light"] .panel {
       box-shadow: 0 10px 32px rgba(23, 27, 34, 0.035);
     }
 
@@ -475,20 +650,28 @@
       width: 16px;
       height: 16px;
       flex: 0 0 16px;
-      color: #69717b;
+      color: var(--muted-soft);
       stroke: currentColor;
       stroke-width: 1.9;
       fill: none;
+    }
+
+    :root[data-theme="light"] .profile-list svg {
+      color: #69717b;
     }
 
     .quote {
       margin-top: 24px;
       min-height: 126px;
       padding: 28px 24px;
-      color: #20262e;
+      color: var(--muted);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 14px;
       line-height: 1.75;
+    }
+
+    :root[data-theme="light"] .quote {
+      color: #20262e;
     }
 
     .quote-mark {
@@ -617,9 +800,14 @@
     .repo-name {
       min-width: 0;
       overflow-wrap: anywhere;
-      color: #1677a7;
+      color: var(--blue);
       font-size: 15px;
       font-weight: 760;
+    }
+
+    :root[data-theme="light"] .repo-name,
+    :root[data-theme="light"] .activity-repo a {
+      color: #1677a7;
     }
 
     .repo-visibility {
@@ -715,13 +903,19 @@
       width: 12px;
       height: 12px;
       border-radius: 2px;
-      background: #edf0f2;
+      background: #25231D;
     }
 
-    .level-1 { background: #c8f0d4; }
-    .level-2 { background: #7ad99c; }
-    .level-3 { background: #39bd69; }
-    .level-4 { background: #12914c; }
+    .level-1 { background: #54482A; }
+    .level-2 { background: #8B7232; }
+    .level-3 { background: #C79E36; }
+    .level-4 { background: #F4C84A; }
+
+    :root[data-theme="light"] .cell { background: #edf0f2; }
+    :root[data-theme="light"] .level-1 { background: #c8f0d4; }
+    :root[data-theme="light"] .level-2 { background: #7ad99c; }
+    :root[data-theme="light"] .level-3 { background: #39bd69; }
+    :root[data-theme="light"] .level-4 { background: #12914c; }
 
     .heatmap-foot {
       display: flex;
@@ -763,8 +957,12 @@
       display: grid;
       grid-template-columns: 18px minmax(0, 1fr);
       gap: 14px;
-      color: #252b33;
+      color: var(--text);
       font-size: 14px;
+    }
+
+    :root[data-theme="light"] .activity-row {
+      color: #252b33;
     }
 
     .activity-row strong {
@@ -787,7 +985,7 @@
     }
 
     .activity-repo a {
-      color: #1677a7;
+      color: var(--blue);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -796,8 +994,12 @@
     .bar {
       height: 8px;
       border-radius: 999px;
-      background: #96dfae;
+      background: #3A3421;
       overflow: hidden;
+    }
+
+    :root[data-theme="light"] .bar {
+      background: #96dfae;
     }
 
     .bar span {
@@ -885,6 +1087,10 @@
         margin-bottom: 16px;
       }
 
+      .contact-links {
+        justify-content: flex-start;
+      }
+
       .quote {
         margin-top: 18px;
       }
@@ -938,6 +1144,12 @@
       .hero {
         min-height: 432px;
         background:
+          linear-gradient(180deg, rgba(15, 17, 21, 0.94) 0%, rgba(15, 17, 21, 0.78) 48%, rgba(15, 17, 21, 0.10) 100%),
+          url("/hero-bg-dark.jpg") 67% center / cover no-repeat;
+      }
+
+      :root[data-theme="light"] .hero {
+        background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.7) 48%, rgba(255, 255, 255, 0.04) 100%),
           url("/hero-bg.jpg") 67% center / cover no-repeat;
       }
@@ -973,6 +1185,10 @@
       .profile h2,
       .handle {
         text-align: center;
+      }
+
+      .contact-links {
+        justify-content: center;
       }
 
       .avatar {
@@ -1029,15 +1245,10 @@
       <a class="brand" href="/zh/" aria-label="Frank Guo 首页">
         <img src="/frankguo-fg-logo.svg" alt="" width="38" height="38">
       </a>
-      <nav class="socials" aria-label="社交链接">
-        <a class="social-icon" href="https://x.com/FrankGuoAI" aria-label="X">
-          <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.4L8 2H2l7.8 11.4L2 22h1.8l6.8-7.8L16 22h6l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.6 9.3h-2.8l-5.3-7.6Z"/></svg>
-        </a>
-        <a class="social-icon" href="https://www.linkedin.com/in/frankguoai" aria-label="LinkedIn">
-          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 8.7H2.1V22h3.3V8.7ZM3.8 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.3c0-3.6-1.9-5.8-4.9-5.8-1.6 0-2.8.8-3.4 1.9V8.7h-3.3V22h3.3v-7.1c0-2.1 1.1-3.2 2.7-3.2 1.5 0 2.3 1 2.3 3V22H22v-7.7Z"/></svg>
-        </a>
-        <button class="social-icon" type="button" id="wechat-trigger" aria-label="微信" aria-expanded="false" aria-controls="wechat-popover">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.1 4.1C4.7 4.1 1.2 7 1.2 10.6c0 2 1.1 3.8 2.8 5l-.7 2.2 2.6-1.3c1 .4 2.1.6 3.2.6.3 0 .7 0 1-.1a6 6 0 0 1-.2-1.5c0-3.2 2.9-5.8 6.5-5.8.2 0 .4 0 .6.1-.5-3.2-3.8-5.7-7.9-5.7Zm-2.6 5.3a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm5.2 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm4.7 1.4c-3.2 0-5.8 2.1-5.8 4.7s2.6 4.7 5.8 4.7c.8 0 1.6-.1 2.3-.4l2.1 1-.5-1.8c1.5-.9 2.5-2.2 2.5-3.8 0-2.3-2.6-4.4-6.4-4.4Zm-1.9 3.6a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Zm4 0a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Z"/></svg>
+      <nav class="socials" aria-label="站点控制">
+        <button class="social-icon theme-toggle" type="button" id="theme-toggle" aria-label="切换到浅色主题" title="切换主题">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.2 8.2 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2M12 22v-2M4.9 4.9 3.5 3.5M20.5 20.5l-1.4-1.4M4 12H2M22 12h-2M4.9 19.1l-1.4 1.4M20.5 3.5l-1.4 1.4M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
         </button>
         <a class="lang-switch" href="/" hreflang="en" aria-label="切换到英文">EN</a>
       </nav>
@@ -1075,6 +1286,20 @@
           <div>
             <h2 id="profile-name">Frank Guo</h2>
             <p class="handle">@frankguodev</p>
+            <div class="contact-links" aria-label="联系方式">
+              <a href="https://x.com/FrankGuoAI" aria-label="X">
+                <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9 10.5 21.3 2h-1.8l-6.4 7.4L8 2H2l7.8 11.4L2 22h1.8l6.8-7.8L16 22h6l-8.1-11.5Zm-2.4 2.7-.8-1.1L4.4 3.3h2.8l5 7.1.8 1.1 6.6 9.3h-2.8l-5.3-7.6Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/frankguoai" aria-label="LinkedIn">
+                <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.4 8.7H2.1V22h3.3V8.7ZM3.8 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.3c0-3.6-1.9-5.8-4.9-5.8-1.6 0-2.8.8-3.4 1.9V8.7h-3.3V22h3.3v-7.1c0-2.1 1.1-3.2 2.7-3.2 1.5 0 2.3 1 2.3 3V22H22v-7.7Z"/></svg>
+              </a>
+              <button type="button" id="wechat-trigger" aria-label="微信" aria-expanded="false" aria-controls="wechat-popover">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.1 4.1C4.7 4.1 1.2 7 1.2 10.6c0 2 1.1 3.8 2.8 5l-.7 2.2 2.6-1.3c1 .4 2.1.6 3.2.6.3 0 .7 0 1-.1a6 6 0 0 1-.2-1.5c0-3.2 2.9-5.8 6.5-5.8.2 0 .4 0 .6.1-.5-3.2-3.8-5.7-7.9-5.7Zm-2.6 5.3a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm5.2 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm4.7 1.4c-3.2 0-5.8 2.1-5.8 4.7s2.6 4.7 5.8 4.7c.8 0 1.6-.1 2.3-.4l2.1 1-.5-1.8c1.5-.9 2.5-2.2 2.5-3.8 0-2.3-2.6-4.4-6.4-4.4Zm-1.9 3.6a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Zm4 0a.7.7 0 1 1 0-1.4.7.7 0 0 1 0 1.4Z"/></svg>
+              </button>
+              <a href="mailto:hello@frankguo.com" aria-label="邮箱">
+                <svg class="email-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4.1h12v7.8H2V4.1Zm1.1 1.1L8 8.7l4.9-3.5M3.2 10.8l3-2.2M12.8 10.8l-3-2.2"/></svg>
+              </a>
+            </div>
             <ul class="profile-list">
               <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14s5-4.2 5-8A5 5 0 0 0 3 6c0 3.8 5 8 5 8Z"></path><circle cx="8" cy="6" r="1.7"></circle></svg>
@@ -1083,10 +1308,6 @@
               <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M8 4.4v4l2.6 1.5"></path></svg>
                 <span id="local-time">--:-- (UTC +08:00)</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.6"></rect><path d="m3.3 5 4.7 3.6L12.7 5"></path></svg>
-                <a href="mailto:hello@frankguo.com">hello@frankguo.com</a>
               </li>
               <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.4 7.4a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4ZM10.8 14v-1.2c0-1.7-2.4-3.1-5.4-3.1S0 11.1 0 12.8V14"></path><path d="M11.4 7.5a2.4 2.4 0 1 0-1.1-4.5M16 14v-.9c0-1.3-1.5-2.5-3.6-3"></path></svg>
@@ -1186,13 +1407,26 @@
       reposToShow: 3,
       activityWeeks: 14,
       languageColors: {
-        Astro: "#ff5a03",
-        CSS: "#663399",
-        HTML: "#e34c26",
-        JavaScript: "#f1e05a",
-        TypeScript: "#3178c6",
-        Python: "#3572a5",
-        Vue: "#41b883"
+        dark: {
+          Astro: "#B98B42",
+          CSS: "#8D7B64",
+          HTML: "#A9783E",
+          JavaScript: "#D5B94A",
+          TypeScript: "#8E826E",
+          Python: "#A28B52",
+          Vue: "#8F996D",
+          fallback: "#77736A"
+        },
+        light: {
+          Astro: "#ff5a03",
+          CSS: "#663399",
+          HTML: "#e34c26",
+          JavaScript: "#f1e05a",
+          TypeScript: "#3178c6",
+          Python: "#3572a5",
+          Vue: "#41b883",
+          fallback: "#8b949e"
+        }
       }
     };
     const $ = (selector) => document.querySelector(selector);
@@ -1214,6 +1448,50 @@
     }).format(date);
 
     const dayKey = (date) => date.toISOString().slice(0, 10);
+    const themeToggle = $("#theme-toggle");
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    let cachedRepos = [];
+
+    function setTheme(theme) {
+      const isLight = theme === "light";
+      document.documentElement.dataset.theme = isLight ? "light" : "dark";
+      if (themeMeta) themeMeta.setAttribute("content", isLight ? "#ffffff" : "#0F1115");
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-label", isLight ? "切换到深色主题" : "切换到浅色主题");
+        themeToggle.setAttribute("title", isLight ? "切换到深色主题" : "切换到浅色主题");
+      }
+    }
+
+    function getLanguageColor(language) {
+      const theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+      const palette = siteConfig.languageColors[theme];
+      return palette[language] || palette.fallback;
+    }
+
+    function initTheme() {
+      let savedTheme = "dark";
+      try {
+        savedTheme = localStorage.getItem("theme") || "dark";
+      } catch (error) {
+        savedTheme = "dark";
+      }
+      setTheme(savedTheme === "light" ? "light" : "dark");
+    }
+
+    initTheme();
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        setTheme(nextTheme);
+        if (cachedRepos.length) renderRepos(cachedRepos);
+        try {
+          localStorage.setItem("theme", nextTheme);
+        } catch (error) {
+          // 即使存储不可用，本次页面访问仍会完成主题切换。
+        }
+      });
+    }
 
     const iconStar = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m8 1.7 1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6L8 1.7Z"></path></svg>';
     const iconFork = '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="5" cy="3.5" r="1.6"></circle><circle cx="11" cy="3.5" r="1.6"></circle><circle cx="8" cy="12.5" r="1.6"></circle><path d="M5 5.1v1.2c0 1.2.8 2.2 2 2.4l1 .2 1-.2c1.2-.2 2-1.2 2-2.4V5.1M8 8.9v2"></path></svg>';
@@ -1258,7 +1536,7 @@
 
       $("#repo-list").innerHTML = visibleRepos.map((repo) => {
         const language = repo.language || "公开";
-        const color = siteConfig.languageColors[language] || "#8b949e";
+        const color = getLanguageColor(language);
         return `
           <article class="repo-card">
             <div class="repo-top">
@@ -1399,6 +1677,7 @@
       try {
         const { user, repos, events, recentCommits } = await loadGitHubData();
         renderProfile(user);
+        cachedRepos = repos;
         renderRepos(repos);
         renderRecentActivityMap(events);
         renderActivity(recentCommits, events);
@@ -1428,10 +1707,36 @@
       }, 160);
     }
 
+    function positionWeChatPopover() {
+      if (!wechatPopover || !wechatTrigger) return;
+      const card = wechatPopover.querySelector(".wechat-card");
+      if (!card) return;
+      const gap = 12;
+      const margin = 16;
+      const triggerRect = wechatTrigger.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const cardWidth = cardRect.width || Math.min(272, window.innerWidth - margin * 2);
+      const cardHeight = cardRect.height || cardWidth + 78;
+      const maxLeft = Math.max(margin, window.innerWidth - cardWidth - margin);
+      const left = Math.min(
+        Math.max(margin, triggerRect.left + triggerRect.width / 2 - cardWidth / 2),
+        maxLeft,
+      );
+      const belowTop = triggerRect.bottom + gap;
+      const aboveTop = triggerRect.top - cardHeight - gap;
+      const top = belowTop + cardHeight + margin <= window.innerHeight
+        ? belowTop
+        : Math.max(margin, aboveTop);
+      wechatPopover.style.setProperty("--wechat-left", `${Math.round(left)}px`);
+      wechatPopover.style.setProperty("--wechat-top", `${Math.round(top)}px`);
+    }
+
     function openWeChatPopover() {
       if (!wechatPopover || !wechatTrigger) return;
       wechatPopover.hidden = false;
+      positionWeChatPopover();
       window.requestAnimationFrame(() => {
+        positionWeChatPopover();
         wechatPopover.classList.add("is-open");
         wechatTrigger.setAttribute("aria-expanded", "true");
       });
@@ -1457,6 +1762,18 @@
           closeWeChatPopover();
         }
       });
+
+      window.addEventListener("resize", () => {
+        if (wechatPopover.classList.contains("is-open")) {
+          positionWeChatPopover();
+        }
+      });
+
+      window.addEventListener("scroll", () => {
+        if (wechatPopover.classList.contains("is-open")) {
+          positionWeChatPopover();
+        }
+      }, { passive: true });
     }
   </script>
 </body>

@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy & Disclaimer · Frank Guo</title>
   <meta name="description" content="Privacy policy and disclaimer for frankguo.dev.">
+  <meta name="theme-color" content="#0F1115">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://frankguo.dev/legal.html">
   <link rel="alternate" hreflang="en" href="https://frankguo.dev/legal.html">
@@ -18,8 +19,21 @@
   <link rel="manifest" href="/site.webmanifest">
   <style>
     :root {
+      color-scheme: dark;
+      --bg: #0F1115;
+      --panel: #15171C;
+      --line: #272923;
+      --text: #E2DFD6;
+      --muted: #AAA69B;
+      --green: #F4C84A;
+      --green-dark: #D8AE37;
+      --max: 880px;
+    }
+
+    :root[data-theme="light"] {
       color-scheme: light;
       --bg: #ffffff;
+      --panel: #ffffff;
       --line: #edf0f3;
       --text: #171b22;
       --muted: #636b75;
@@ -34,10 +48,16 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(244, 200, 74, 0.08), transparent 34vw),
+        linear-gradient(180deg, #111318 0%, var(--bg) 42%, #0B0D10 100%);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.65;
+    }
+
+    :root[data-theme="light"] body {
+      background: var(--bg);
     }
 
     a {
@@ -72,10 +92,72 @@
       font-weight: 800;
     }
 
+    :root[data-theme="light"] .brand {
+      color: #080a0d;
+    }
+
     .brand img {
       width: 34px;
       height: 34px;
       border-radius: 8px;
+    }
+
+    .controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel);
+      color: var(--muted);
+      cursor: pointer;
+      transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: rgba(244, 200, 74, 0.42);
+      background: rgba(244, 200, 74, 0.10);
+      color: var(--green);
+    }
+
+    :root[data-theme="light"] .theme-toggle:hover {
+      border-color: var(--line);
+      background: #fbfcfd;
+      color: var(--green-dark);
+    }
+
+    .theme-toggle svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .theme-toggle .moon-icon {
+      fill: currentColor;
+    }
+
+    .theme-toggle .sun-icon {
+      display: none;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    :root[data-theme="light"] .theme-toggle .moon-icon {
+      display: none;
+    }
+
+    :root[data-theme="light"] .theme-toggle .sun-icon {
+      display: block;
     }
 
     .lang {
@@ -142,6 +224,10 @@
       .footer {
         align-items: flex-start;
       }
+
+      .controls {
+        gap: 8px;
+      }
     }
   </style>
 </head>
@@ -152,7 +238,13 @@
         <img src="/frankguo-fg-logo.svg" alt="" width="34" height="34">
         <span>Frank Guo</span>
       </a>
-      <a class="lang" href="/zh/legal.html" hreflang="zh-CN">中文</a>
+      <div class="controls">
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.2 8.2 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2M12 22v-2M4.9 4.9 3.5 3.5M20.5 20.5l-1.4-1.4M4 12H2M22 12h-2M4.9 19.1l-1.4 1.4M20.5 3.5l-1.4 1.4M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
+        </button>
+        <a class="lang" href="/zh/legal.html" hreflang="zh-CN">中文</a>
+      </div>
     </header>
 
     <main>
@@ -180,5 +272,39 @@
       <div class="copyright">© 2026 Frank Guo. All rights reserved.</div>
     </footer>
   </div>
+  <script>
+    const themeToggle = document.querySelector("#theme-toggle");
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function setTheme(theme) {
+      const isLight = theme === "light";
+      document.documentElement.dataset.theme = isLight ? "light" : "dark";
+      if (themeMeta) themeMeta.setAttribute("content", isLight ? "#ffffff" : "#0F1115");
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+        themeToggle.setAttribute("title", isLight ? "Switch to dark theme" : "Switch to light theme");
+      }
+    }
+
+    let savedTheme = "dark";
+    try {
+      savedTheme = localStorage.getItem("theme") || "dark";
+    } catch (error) {
+      savedTheme = "dark";
+    }
+    setTheme(savedTheme === "light" ? "light" : "dark");
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        setTheme(nextTheme);
+        try {
+          localStorage.setItem("theme", nextTheme);
+        } catch (error) {
+          // Theme still switches for the current page even when storage is unavailable.
+        }
+      });
+    }
+  </script>
 </body>
 </html>
