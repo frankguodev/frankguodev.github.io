@@ -75,6 +75,6 @@ http://localhost:8000/zh/
 - Website: https://frankguo.dev
 - Brand site: https://frankguo.com
 - GitHub: https://github.com/frankguodev
-- X: https://x.com/FrankGuoAI
-- LinkedIn: https://www.linkedin.com/in/frankguoai
+- X: https://x.com/frankguodev
+- LinkedIn: https://www.linkedin.com/in/frankguodev
 - Contact: hello@frankguo.com
