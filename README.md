@@ -1,6 +1,6 @@
 # frankguo.dev
 
-[English](./README.md) | [中文](./README.zh-CN.md)
+English | [中文](./README.zh-CN.md)
 
 A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.
 
