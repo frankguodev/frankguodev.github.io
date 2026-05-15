@@ -58,7 +58,7 @@ identity
 
 当前视觉方向是温暖、暗色、克制的。
 
-![Frank Guo site preview](./public/website_home.jpg)
+![Frank Guo site preview](./public/frankguo_dev_zh.jpg)
 
 视觉资源直接和页面放在一起，而不是藏在复杂的构建系统后面：
 
@@ -142,7 +142,4 @@ http://localhost:8000/zh/
 ## 链接
 
 - Website: [frankguo.dev](https://frankguo.dev)
-- Brand site: [frankguo.com](https://frankguo.com)
-- GitHub: [frankguodev](https://github.com/frankguodev)
 - X: [frankguodev](https://x.com/frankguodev)
-- LinkedIn: [frankguodev](https://www.linkedin.com/in/frankguodev)

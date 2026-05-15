@@ -58,7 +58,7 @@ identity
 
 The current visual direction is warm, dark, and restrained.
 
-![Frank Guo site preview](./public/website_home.jpg)
+![Frank Guo site preview](./public/frankguo_dev_en.jpg)
 
 Supporting visual assets live beside the pages rather than behind a build system:
 
@@ -142,7 +142,4 @@ http://localhost:8000/zh/
 ## Links
 
 - Website: [frankguo.dev](https://frankguo.dev)
-- Brand site: [frankguo.com](https://frankguo.com)
-- GitHub: [frankguodev](https://github.com/frankguodev)
 - X: [frankguodev](https://x.com/frankguodev)
-- LinkedIn: [frankguodev](https://www.linkedin.com/in/frankguodev)
