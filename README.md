@@ -72,8 +72,7 @@ http://localhost:8000/zh/
 
 ## Links
 
-- Website: https://frankguo.dev
-- Brand site: https://frankguo.com
+- Website: https://frankguo.com
 - GitHub: https://github.com/frankguodev
 - X: https://x.com/frankguodev
 - LinkedIn: https://www.linkedin.com/in/frankguodev
