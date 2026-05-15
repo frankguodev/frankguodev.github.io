@@ -29,23 +29,23 @@
   <meta property="og:site_name" content="Frank Guo">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:image" content="https://frankguo.dev/og-image.jpg">
+  <meta property="og:image" content="https://frankguo.dev/public/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Frank Guo · 软件工程师与 AI 实践者">
   <meta name="twitter:description" content="一名正在探索 AI 如何帮助普通人建立更好系统、工作流与长期成长的软件工程师。">
-  <meta name="twitter:image" content="https://frankguo.dev/og-image.jpg">
+  <meta name="twitter:image" content="https://frankguo.dev/public/og-image.jpg">
   <link rel="canonical" href="https://frankguo.dev/zh/">
   <link rel="alternate" hreflang="en" href="https://frankguo.dev/">
   <link rel="alternate" hreflang="zh-CN" href="https://frankguo.dev/zh/">
   <link rel="alternate" hreflang="x-default" href="https://frankguo.dev/">
   <link rel="me" href="https://github.com/frankguodev">
-  <link rel="preload" as="image" href="/hero-bg-dark.jpg" fetchpriority="high">
-  <link rel="preload" as="image" href="/owner-image-512.jpg" imagesrcset="/owner-image-512.jpg 512w, /owner-image-1024.jpg 1024w, /owner_image.jpg 1086w" imagesizes="(max-width: 760px) 118px, 156px" fetchpriority="high">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" as="image" href="/public/hero-bg-dark.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="/public/owner-image-512.jpg" imagesrcset="/public/owner-image-512.jpg 512w, /public/owner-image-1024.jpg 1024w, /public/owner_image.jpg 1086w" imagesizes="(max-width: 760px) 118px, 156px" fetchpriority="high">
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="icon" href="/public/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/public/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/public/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <script type="application/ld+json">
     {
@@ -56,7 +56,7 @@
           "@id": "https://frankguo.dev/#person",
           "name": "Frank Guo",
           "url": "https://frankguo.dev/",
-          "image": "https://frankguo.dev/owner-image-1024.jpg",
+          "image": "https://frankguo.dev/public/owner-image-1024.jpg",
           "jobTitle": "软件工程师与 AI 实践者",
           "description": "Frank Guo 是一名正在探索 AI 如何帮助普通人建立更好系统、工作流与长期成长的软件工程师。",
           "sameAs": [
@@ -97,7 +97,7 @@
           },
           "primaryImageOfPage": {
             "@type": "ImageObject",
-            "url": "https://frankguo.dev/og-image.jpg",
+            "url": "https://frankguo.dev/public/og-image.jpg",
             "width": 1200,
             "height": 630
           },
@@ -225,6 +225,7 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
+      flex: 0 0 auto;
       color: var(--text);
       font-size: 20px;
       font-weight: 800;
@@ -243,6 +244,7 @@
     .socials {
       display: flex;
       align-items: center;
+      flex: 0 0 auto;
       gap: 10px;
     }
 
@@ -501,14 +503,14 @@
       border-radius: 8px;
       background:
         linear-gradient(90deg, rgba(15, 17, 21, 0.92) 0%, rgba(15, 17, 21, 0.74) 34%, rgba(15, 17, 21, 0.10) 68%),
-        url("/hero-bg-dark.jpg") center / cover no-repeat;
+        url("/public/hero-bg-dark.jpg") center 38% / cover no-repeat;
       box-shadow: var(--shadow);
     }
 
     :root[data-theme="light"] .hero {
       background:
         linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.68) 30%, rgba(255, 255, 255, 0.05) 64%),
-        url("/hero-bg.jpg") center / cover no-repeat;
+        url("/public/hero-bg.jpg") center 38% / cover no-repeat;
     }
 
     :root[data-theme="light"] .eyebrow {
@@ -1207,10 +1209,17 @@
 
       .topbar-inner {
         min-height: 62px;
+        gap: 12px;
       }
 
       .brand {
         font-size: 17px;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
       }
 
       .socials {
@@ -1218,13 +1227,13 @@
       }
 
       .socials .social-icon {
-        width: 23px;
-        height: 23px;
+        width: 34px;
+        height: 34px;
       }
 
       .socials svg {
-        width: 19px;
-        height: 19px;
+        width: 20px;
+        height: 20px;
       }
 
       .socials .x-icon,
@@ -1234,10 +1243,10 @@
       }
 
       .socials .lang-switch {
-        min-width: 28px;
-        height: 23px;
-        padding: 0 6px;
-        font-size: 10px;
+        min-width: 42px;
+        height: 34px;
+        padding: 0 8px;
+        font-size: 11px;
       }
 
       .page {
@@ -1248,13 +1257,13 @@
         min-height: 432px;
         background:
           linear-gradient(180deg, rgba(15, 17, 21, 0.94) 0%, rgba(15, 17, 21, 0.78) 48%, rgba(15, 17, 21, 0.10) 100%),
-          url("/hero-bg-dark.jpg") 67% center / cover no-repeat;
+          url("/public/hero-bg-dark.jpg") 67% center / cover no-repeat;
       }
 
       :root[data-theme="light"] .hero {
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.7) 48%, rgba(255, 255, 255, 0.04) 100%),
-          url("/hero-bg.jpg") 67% center / cover no-repeat;
+          url("/public/hero-bg.jpg") 67% center / cover no-repeat;
       }
 
       .hero-content {
@@ -1337,11 +1346,21 @@
       }
 
       .footer-inner {
+        flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
       }
 
       .copyright {
+        width: 100%;
+        text-align: center;
         white-space: normal;
+      }
+
+      .footer-links {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -1351,7 +1370,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/zh/" aria-label="Frank Guo 首页">
-        <img src="/frankguo-fg-logo.svg" alt="" width="38" height="38">
+        <img src="/public/frankguo-fg-logo.svg" alt="" width="38" height="38">
       </a>
       <nav class="socials" aria-label="站点控制">
         <button class="social-icon theme-toggle" type="button" id="theme-toggle" aria-label="切换到浅色主题" title="切换主题">
@@ -1366,7 +1385,7 @@
   <div class="wechat-popover" id="wechat-popover" hidden>
     <div class="wechat-card" role="dialog" aria-modal="false" aria-labelledby="wechat-title">
       <p class="wechat-title" id="wechat-title">加好友前请备注</p>
-      <img src="/weixin.jpg" alt="微信二维码" width="236" height="236" loading="lazy">
+      <img src="/public/weixin.jpg" alt="微信二维码" width="236" height="236" loading="lazy">
       <p class="wechat-note">通过微信交流|咨询</p>
     </div>
   </div>
@@ -1390,7 +1409,7 @@
     <div class="layout">
       <aside>
         <section class="panel profile" aria-label="个人资料">
-          <img class="avatar" id="profile-avatar" src="/owner-image-512.jpg" srcset="/owner-image-512.jpg 512w, /owner-image-1024.jpg 1024w, /owner_image.jpg 1086w" sizes="(max-width: 760px) 118px, 156px" alt="Frank Guo" width="156" height="156">
+          <img class="avatar" id="profile-avatar" src="/public/owner-image-512.jpg" srcset="/public/owner-image-512.jpg 512w, /public/owner-image-1024.jpg 1024w, /public/owner_image.jpg 1086w" sizes="(max-width: 760px) 118px, 156px" alt="Frank Guo" width="156" height="156">
           <div>
             <h2 id="profile-name">Frank Guo</h2>
             <p class="handle">@frankguodev</p>
@@ -1411,7 +1430,7 @@
             <ul class="profile-list">
               <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14s5-4.2 5-8A5 5 0 0 0 3 6c0 3.8 5 8 5 8Z"></path><circle cx="8" cy="6" r="1.7"></circle></svg>
-                <span id="profile-location">中国 / 全球</span>
+                <span id="profile-location">GitHub / Dev</span>
               </li>
               <li>
                 <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"></circle><path d="M8 4.4v4l2.6 1.5"></path></svg>
@@ -1536,7 +1555,7 @@
       githubUrl: "https://github.com/frankguodev",
       email: "hello@frankguo.com",
       fallbackName: "Frank Guo",
-      location: "中国 / 全球",
+      location: "GitHub / Dev",
       intro: "探索 AI 如何帮助普通人建立更好的系统、工作流与长期成长。",
       timeZone: "Asia/Shanghai",
       timeZoneLabel: "UTC +08:00",

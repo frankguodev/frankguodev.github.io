@@ -1,5 +1,7 @@
 # frankguo.dev
 
+[English](./README.md) | [中文](./README.zh-CN.md)
+
 A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.
 
 
@@ -56,7 +58,7 @@ identity
 
 The current visual direction is warm, dark, and restrained.
 
-![Frank Guo site preview](./website_home.jpg)
+![Frank Guo site preview](./public/website_home.jpg)
 
 Supporting visual assets live beside the pages rather than behind a build system:
 
@@ -123,11 +125,12 @@ http://localhost:8000/zh/
 ├── legal.html
 ├── zh/legal.html
 ├── github-data.json
-├── frankguo-fg-logo.svg
-├── hero-bg.jpg
-├── hero-bg-dark.jpg
-├── favicon.svg
 ├── site.webmanifest
+├── public/
+│   ├── frankguo-fg-logo.svg
+│   ├── hero-bg.jpg
+│   ├── hero-bg-dark.jpg
+│   └── favicon.svg
 ├── sitemap.xml
 ├── robots.txt
 └── .github/
