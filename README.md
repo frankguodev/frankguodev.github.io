@@ -1,63 +1,106 @@
-# Frank Guo Developer Site
+# frankguo.dev
 
-This repository contains the source code for [frankguo.dev](https://frankguo.dev), the personal developer website of Frank Guo.
+A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.
 
-The site serves as a public profile for Frank's work in AI tools, AI-assisted creation, independent development, personal branding, and practical project building. It is designed to help visitors understand who Frank is, what he focuses on, and where to follow his work.
 
-## Overview
+## Why This Exists
 
-The website is a lightweight, bilingual static site with English as the default language and Chinese as an alternate version. It combines a personal profile, public GitHub activity, social links, and essential site metadata into a simple developer homepage.
+This repository holds the source for [frankguo.dev](https://frankguo.dev).
 
-Key areas of focus include:
+It is not meant to be a loud portfolio or a fast-moving product surface. It is a small public home: a place to gather identity, work, notes, links, GitHub activity, and the slow traces of ongoing practice.
 
-- AI tools, workflows, prompts, agents, and automation
-- AI-assisted writing, image, video, and content creation
-- Independent development and hands-on project practice
-- Personal branding, domain identity, and proof of work
-- Global-facing content and English-first publishing
+The site exists because a personal domain can be more than a profile page. It can become a durable place to return to, revise, and let time accumulate.
 
-## Features
 
-- English and Chinese versions
-- Responsive personal profile layout
-- GitHub profile, repository, activity, and commit summaries
-- SEO-friendly metadata, canonical URLs, hreflang tags, and structured data
-- Open Graph and Twitter Card metadata for social sharing
-- Custom favicon, app icons, web manifest, and brand assets
-- Privacy, disclaimer, and custom 404 pages
+## Philosophy
 
-## Project Structure
+The project is built around a few quiet preferences:
+
+- keep the structure simple enough to understand months later
+- let the interface feel calm before it feels clever
+- make the site useful without making it noisy
+- treat design, code, and personal identity as one continuous system
+- leave room for iteration instead of pretending the work is finished
+
+There is very little machinery here on purpose. The site is written with plain HTML, CSS, and JavaScript, supported by a small cached GitHub data file and a scheduled workflow.
+
+The intention is not minimalism as decoration. It is minimalism as maintenance.
+
+
+## Current Direction
+
+The site is currently moving toward a warmer, more editorial identity:
+
+- bilingual pages in English and Chinese
+- a default dark theme with a warm black background
+- restrained yellow accents
+- a refined FG logo system
+- GitHub activity shown as a quiet signal of ongoing work
+- privacy, disclaimer, manifest, favicon, and crawler metadata kept close to the site itself
+
+The public surface is small, but the system underneath is being shaped carefully.
 
 ```text
-.
-├── index.html                         # English homepage
-├── zh/index.html                      # Chinese homepage
-├── legal.html                         # English privacy and disclaimer page
-├── zh/legal.html                      # Chinese privacy and disclaimer page
-├── 404.html                           # Custom 404 page
-├── github-data.json                   # Cached public GitHub data
-├── sitemap.xml                        # XML sitemap
-├── robots.txt                         # Search crawler rules
-├── llms.txt                           # LLM-oriented site summary
-├── humans.txt                         # Human-readable site credits
-├── site.webmanifest                   # Web app manifest
-├── CNAME                              # Custom GitHub Pages domain
-└── .github/
-    ├── scripts/update-github-cache.mjs
-    └── workflows/update-github-cache.yml
+identity
+   |
+   +-- homepage
+   +-- bilingual copy
+   +-- GitHub activity cache
+   +-- legal / privacy notes
+   +-- favicon and brand assets
+   +-- small edits over time
 ```
 
-## Technical Notes
 
-This is a pure static website. It does not use a frontend framework, build step, or server-side application.
+## Screenshots
 
-The pages are written with plain HTML, CSS, and JavaScript. The homepage reads `github-data.json` to display public GitHub profile data, repositories, recent events, and recent commit counts.
+The current visual direction is warm, dark, and restrained.
 
-GitHub data is cached through a scheduled GitHub Actions workflow. The workflow runs every 6 hours, fetches public data from the GitHub API, updates `github-data.json`, and commits the file when the data changes.
+![Frank Guo site preview](./website_home.jpg)
+
+Supporting visual assets live beside the pages rather than behind a build system:
+
+- `hero-bg.jpg` for the light theme
+- `hero-bg-dark.jpg` for the dark theme
+- `frankguo-fg-logo.svg` as the primary vector logo
+- `favicon.svg`, PNG icons, and `favicon.ico` generated from the same logo direction
+
+
+## Roadmap
+
+This project will likely keep changing in small passes rather than large rewrites.
+
+- refine the homepage rhythm as the body of work grows
+- keep the bilingual pages aligned without making them feel mechanically mirrored
+- improve the GitHub activity display when there is a clearer story to tell
+- add writing or project notes only when they have enough weight to stay
+- keep the visual system quiet, warm, and recognizable
+- reduce anything that starts to feel decorative without purpose
+
+Some parts will remain imperfect for a while. That is acceptable. A personal site should show signs of being lived with.
+
+
+## Notes And Learnings
+
+The site is intentionally static.
+
+There is no frontend framework, no build step, and no server application. The homepage reads `github-data.json` for public GitHub profile data, repositories, recent events, and commit counts. A GitHub Actions workflow updates that cache on a schedule.
+
+```text
+GitHub API
+   -> .github/scripts/update-github-cache.mjs
+   -> github-data.json
+   -> index.html / zh/index.html
+```
+
+This keeps the public site fast and portable while still allowing a small amount of living data to move through it.
+
+The most useful lesson so far: a quiet system still needs strong decisions. Color, spacing, language, metadata, icons, and automation all shape the feeling of the place. None of them are neutral.
+
 
 ## Local Preview
 
-You can open `index.html` directly in a browser. For a more accurate local preview with root-relative assets and `fetch("/github-data.json")`, run a static server from the repository root:
+The pages can be opened directly, but a small static server gives a closer preview because the site uses root-relative assets and fetches `github-data.json`.
 
 ```bash
 python -m http.server 8000
@@ -70,10 +113,33 @@ http://localhost:8000/
 http://localhost:8000/zh/
 ```
 
+
+## Repository Shape
+
+```text
+.
+├── index.html
+├── zh/index.html
+├── legal.html
+├── zh/legal.html
+├── github-data.json
+├── frankguo-fg-logo.svg
+├── hero-bg.jpg
+├── hero-bg-dark.jpg
+├── favicon.svg
+├── site.webmanifest
+├── sitemap.xml
+├── robots.txt
+└── .github/
+    ├── scripts/update-github-cache.mjs
+    └── workflows/update-github-cache.yml
+```
+
+
 ## Links
 
-- Website: https://frankguo.com
-- GitHub: https://github.com/frankguodev
-- X: https://x.com/frankguodev
-- LinkedIn: https://www.linkedin.com/in/frankguodev
-- Contact: hello@frankguo.com
+- Website: [frankguo.dev](https://frankguo.dev)
+- Brand site: [frankguo.com](https://frankguo.com)
+- GitHub: [frankguodev](https://github.com/frankguodev)
+- X: [frankguodev](https://x.com/frankguodev)
+- LinkedIn: [frankguodev](https://www.linkedin.com/in/frankguodev)

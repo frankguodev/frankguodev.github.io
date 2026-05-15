@@ -1,12 +1,12 @@
 /* TEAM */
 Owner: Frank Guo
-Role: Hands-on AI builder, indie developer
+Role: Software engineer, AI practitioner, independent builder
 Website: https://frankguo.dev/
 GitHub: https://github.com/frankguodev
 Contact: hello@frankguo.com
 
 /* SITE */
-Purpose: AI practice, global content, personal branding, project practice, and GitHub entry point
+Purpose: A quiet personal site for AI practice, software building, writing systems, and long-term digital craftsmanship
 Language: English, Simplified Chinese
 Standards: HTML, CSS, JavaScript, GitHub Pages
-Last updated: 2026-05-09
+Last updated: 2026-05-15

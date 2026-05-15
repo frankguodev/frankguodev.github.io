@@ -6,6 +6,19 @@
   <title>Frank Guo · 软件工程师与 AI 实践者</title>
   <meta name="description" content="Frank Guo 是一名软件工程师，正在探索 AI 如何帮助普通人建立更好的系统、工作流与长期成长。">
   <meta name="theme-color" content="#0F1115">
+  <script>
+    (() => {
+      let theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") || "dark";
+      } catch (error) {
+        theme = "dark";
+      }
+      theme = theme === "light" ? "light" : "dark";
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "light" ? "#ffffff" : "#0F1115");
+    })();
+  </script>
   <meta name="author" content="Frank Guo">
   <meta name="robots" content="index, follow">
   <meta name="keywords" content="Frank Guo, frankguodev, AI 编程, AI 工作流, 写作与知识系统, 长期个人品牌, X 账号运营, 软件工程师, 公开构建">
@@ -27,7 +40,6 @@
   <link rel="alternate" hreflang="x-default" href="https://frankguo.dev/">
   <link rel="me" href="https://github.com/frankguodev">
   <link rel="preload" as="image" href="/hero-bg-dark.jpg" fetchpriority="high">
-  <link rel="preload" as="image" href="/hero-bg.jpg">
   <link rel="preload" as="image" href="/owner-image-512.jpg" imagesrcset="/owner-image-512.jpg 512w, /owner-image-1024.jpg 1024w, /owner_image.jpg 1086w" imagesizes="(max-width: 760px) 118px, 156px" fetchpriority="high">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -239,12 +251,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid transparent;
+      border: 1px solid rgba(244, 200, 74, 0.14);
       border-radius: 7px;
       background: transparent;
       color: var(--muted);
       font: inherit;
-      transition: border-color 0.14s ease, color 0.14s ease;
+      box-shadow: inset 0 0 0 0 rgba(244, 200, 74, 0);
+      transition: background-color 0.14s ease, box-shadow 0.14s ease, color 0.14s ease;
     }
 
     .socials .social-icon {
@@ -256,7 +269,9 @@
 
     :root[data-theme="light"] .socials a,
     :root[data-theme="light"] .socials button {
+      border-color: transparent;
       color: #020408;
+      box-shadow: none;
     }
 
     .contact-links {
@@ -280,15 +295,18 @@
       color: var(--muted);
       font: inherit;
       cursor: pointer;
-      transition: border-color 0.14s ease, color 0.14s ease;
+      box-shadow: inset 0 0 0 0 rgba(244, 200, 74, 0), 0 0 0 rgba(244, 200, 74, 0);
+      transition: background-color 0.14s ease, box-shadow 0.14s ease, color 0.14s ease;
     }
 
     .contact-links a:hover,
     .contact-links button:hover,
     .contact-links button[aria-expanded="true"] {
-      border-color: var(--green);
-      background: var(--panel-soft);
+      background: rgba(244, 200, 74, 0.06);
       color: var(--green);
+      box-shadow:
+        inset 0 0 0 1px rgba(244, 200, 74, 0.44),
+        0 0 18px rgba(244, 200, 74, 0.10);
     }
 
     :root[data-theme="light"] .contact-links a,
@@ -329,9 +347,11 @@
     .socials a:hover,
     .socials button:hover,
     .socials button[aria-expanded="true"] {
-      border-color: var(--green);
-      background: transparent;
+      background: rgba(244, 200, 74, 0.05);
       color: var(--green);
+      box-shadow:
+        inset 0 0 0 1px rgba(244, 200, 74, 0.44),
+        0 0 18px rgba(244, 200, 74, 0.10);
     }
 
     :root[data-theme="light"] .socials a:hover,
@@ -340,6 +360,7 @@
       border-color: var(--line-strong);
       background: var(--panel-soft);
       color: var(--green-dark);
+      box-shadow: none;
     }
 
     .socials svg {
@@ -1583,17 +1604,7 @@
       return palette[language] || palette.fallback;
     }
 
-    function initTheme() {
-      let savedTheme = "dark";
-      try {
-        savedTheme = localStorage.getItem("theme") || "dark";
-      } catch (error) {
-        savedTheme = "dark";
-      }
-      setTheme(savedTheme === "light" ? "light" : "dark");
-    }
-
-    initTheme();
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
 
     if (themeToggle) {
       themeToggle.addEventListener("click", () => {

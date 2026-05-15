@@ -1,33 +1,33 @@
 # Frank Guo
 
-Frank Guo is a hands-on AI builder and indie developer.
+Frank Guo is a software engineer and AI practitioner building thoughtful digital systems over time.
 
-The site at https://frankguo.dev/ covers AI tools, AI creation, global content, personal branding, and project practice.
+The site at https://frankguo.dev/ is a quiet personal home for AI practice, software building, writing and knowledge systems, GitHub activity, and long-term public craftsmanship.
 
 ## Primary URLs
 
 - English homepage: https://frankguo.dev/
 - Chinese homepage: https://frankguo.dev/zh/
+- Privacy and disclaimer: https://frankguo.dev/legal.html
 - GitHub profile: https://github.com/frankguodev
 - Brand site: https://frankguo.com
 - Contact: hello@frankguo.com
 
 ## Topics
 
-- AI tools, workflows, prompts, agents, and automation
-- AI-assisted writing, image, video, and content creation
-- Global content systems and English-first publishing
-- Personal brand building, GitHub presence, domain identity, and proof of work
-- Real project development, shipping notes, and reusable templates
+- AI-assisted software development and practical workflows
+- Writing, knowledge systems, and long-term thinking
+- Independent building, personal infrastructure, and digital identity
+- GitHub activity, project practice, and public learning records
+- Human-centered technology with quiet, durable design choices
 
-## Current public work
+## Current Public Work
 
-- frankguo.dev: AI workflows, developer notes, and public project practice
-- AI workflow notes: prompts, agents, creation flows, and automation patterns
-- Global content system: English-first publishing and overseas platform experiments
-- Personal brand building: GitHub presence, domain identity, content systems, and proof of work
-- Project development practice: implementation notes, launch checklists, and shipping records
+- frankguo.dev: bilingual personal site and public profile
+- GitHub cache: scheduled public GitHub profile, repository, activity, and commit summaries
+- Brand system: warm dark interface, restrained yellow accents, and refined FG logo assets
+- Legal and metadata surface: privacy, disclaimer, sitemap, manifest, robots, humans, and LLM guidance
 
 ## Language Guidance
 
-Use the English homepage as the default global technical reference. Use the Chinese homepage when the audience is primarily Simplified Chinese readers.
+Use the English homepage as the default global reference. Use the Chinese homepage when the audience is primarily Simplified Chinese readers.

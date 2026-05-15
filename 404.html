@@ -1,23 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0F1115">
   <title>Page Not Found · Frank Guo</title>
-  <meta name="description" content="The requested page could not be found. Return to Frank Guo's AI practice, personal branding, and GitHub entry point.">
+  <meta name="description" content="The requested page could not be found. Return to Frank Guo's personal site for AI practice, software building, and long-term digital systems.">
   <link rel="canonical" href="https://frankguo.dev/404.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <style>
     :root {
-      --canvas: #ffffff;
-      --canvas-subtle: #f6f8fa;
-      --border: #d0d7de;
-      --fg: #24292f;
-      --muted: #57606a;
-      --accent: #0969da;
+      color-scheme: dark;
+      --bg: #0F1115;
+      --panel: #15171C;
+      --line: #272923;
+      --line-strong: #343126;
+      --text: #E2DFD6;
+      --muted: #AAA69B;
+      --green: #F4C84A;
+      --green-dark: #D8AE37;
+      --shadow: 0 22px 54px rgba(0, 0, 0, 0.38);
     }
 
     * {
@@ -29,18 +35,21 @@
       min-height: 100vh;
       margin: 0;
       place-items: center;
-      background: var(--canvas-subtle);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 8%, rgba(244, 200, 74, 0.08), transparent 34vw),
+        linear-gradient(180deg, #111318 0%, var(--bg) 42%, #0B0D10 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.5;
     }
 
     main {
       width: min(100% - 32px, 720px);
       padding: 36px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--canvas);
+      background: var(--panel);
+      box-shadow: var(--shadow);
     }
 
     img {
@@ -51,8 +60,10 @@
 
     h1 {
       margin: 18px 0 8px;
+      color: var(--text);
       font-size: 32px;
       line-height: 1.2;
+      letter-spacing: 0;
     }
 
     p {
@@ -72,19 +83,31 @@
       justify-content: center;
       min-height: 36px;
       padding: 0 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--accent);
-      font-weight: 650;
+      border: 1px solid rgba(244, 200, 74, 0.14);
+      border-radius: 7px;
+      background: rgba(244, 200, 74, 0.04);
+      color: var(--muted);
+      font-weight: 700;
       text-decoration: none;
+      box-shadow: inset 0 0 0 0 rgba(244, 200, 74, 0);
+      transition: background-color 0.14s ease, box-shadow 0.14s ease, color 0.14s ease;
     }
 
     a:hover,
     a:focus-visible {
-      border-color: #8c959f;
+      background: rgba(244, 200, 74, 0.06);
+      color: var(--green);
       text-decoration: none;
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
+      outline: none;
+      box-shadow:
+        inset 0 0 0 1px rgba(244, 200, 74, 0.44),
+        0 0 18px rgba(244, 200, 74, 0.10);
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 28px;
+      }
     }
   </style>
 </head>
