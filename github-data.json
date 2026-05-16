@@ -1,16 +1,30 @@
 {
-  "generatedAt": "2026-05-16T07:32:58.348Z",
+  "generatedAt": "2026-05-16T15:41:38.282Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
     "name": "Frank Guo",
     "avatar_url": "https://avatars.githubusercontent.com/u/283070267?v=4",
     "html_url": "https://github.com/frankguodev",
-    "public_repos": 1,
+    "public_repos": 2,
     "followers": 1,
     "following": 0
   },
   "repos": [
+    {
+      "name": "ai-ui-constitution",
+      "full_name": "frankguodev/ai-ui-constitution",
+      "html_url": "https://github.com/frankguodev/ai-ui-constitution",
+      "description": "A constitutional design system for AI-generated interfaces.",
+      "language": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-05-16T12:50:26Z",
+      "updated_at": "2026-05-16T13:22:54Z"
+    },
     {
       "name": "frankguodev.github.io",
       "full_name": "frankguodev/frankguodev.github.io",
@@ -22,11 +36,24 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-05-15T21:42:09Z",
-      "updated_at": "2026-05-15T21:42:13Z"
+      "pushed_at": "2026-05-16T07:32:59Z",
+      "updated_at": "2026-05-16T07:33:02Z"
     }
   ],
   "events": [
+    {
+      "id": "9538001117",
+      "type": "PublicEvent",
+      "created_at": "2026-05-16T00:48:02Z",
+      "repo": {
+        "id": 1240282801,
+        "name": "frankguodev/ai-ui-constitution",
+        "url": "https://api.github.com/repos/frankguodev/ai-ui-constitution"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
     {
       "id": "11907063953",
       "type": "PushEvent",
@@ -334,6 +361,12 @@
       "html_url": "https://github.com/frankguodev/frankguodev.github.io",
       "count": 24,
       "latest_at": "2026-05-15T14:20:40Z"
+    },
+    {
+      "repo": "frankguodev/ai-ui-constitution",
+      "html_url": "https://github.com/frankguodev/ai-ui-constitution",
+      "count": 2,
+      "latest_at": "2026-05-16T12:50:17Z"
     }
   ]
 }
