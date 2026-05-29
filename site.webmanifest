@@ -1,7 +1,7 @@
 {
   "name": "Frank Guo",
   "short_name": "Frank Guo",
-  "description": "A quiet personal website for AI practice, software building, and long-term digital systems.",
+  "description": "A quiet personal website documenting ongoing practice around AI, software, writing, and long-term digital systems.",
   "start_url": "/",
   "scope": "/",
   "display": "minimal-ui",

@@ -1,8 +1,8 @@
 # Frank Guo
 
-Frank Guo is a software engineer and AI practitioner building thoughtful digital systems over time.
+Frank Guo is a software engineer and AI explorer building thoughtful digital systems over time.
 
-The site at https://frankguo.dev/ is a quiet personal home for AI practice, software building, writing and knowledge systems, GitHub activity, and long-term public craftsmanship.
+The site at https://frankguo.dev/ is a quiet personal home documenting ongoing practice around AI, software, writing, GitHub activity, and long-term digital systems.
 
 ## Primary URLs
 
@@ -15,17 +15,17 @@ The site at https://frankguo.dev/ is a quiet personal home for AI practice, soft
 
 ## Topics
 
-- AI-assisted software development and practical workflows
-- Writing, knowledge systems, and long-term thinking
-- Independent building, personal infrastructure, and digital identity
-- GitHub activity, project practice, and public learning records
-- Human-centered technology with quiet, durable design choices
+- AI coding, agents, and skills
+- Writing and long-term digital systems
+- Independent building and personal brand experiments
+- GitHub activity and public learning records
+- Simple, human-centered tools
 
 ## Current Public Work
 
 - frankguo.dev: bilingual personal site and public profile
 - GitHub cache: scheduled public GitHub profile, repository, activity, and commit summaries
-- Brand system: warm dark interface, restrained yellow accents, and refined FG logo assets
+- Brand system: warm dark interface, restrained yellow accents, and FG logo assets
 - Legal and metadata surface: privacy, disclaimer, sitemap, manifest, robots, humans, and LLM guidance
 
 ## Language Guidance
