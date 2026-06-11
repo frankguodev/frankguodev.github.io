@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:59:36.804Z",
+  "generatedAt": "2026-06-11T16:30:58.987Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -11,6 +11,20 @@
     "following": 5
   },
   "repos": [
+    {
+      "name": "frankguodev.github.io",
+      "full_name": "frankguodev/frankguodev.github.io",
+      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
+      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-06-11T10:59:37Z",
+      "updated_at": "2026-06-11T10:59:43Z"
+    },
     {
       "name": "zhizhi.xyz",
       "full_name": "frankguodev/zhizhi.xyz",
@@ -24,20 +38,6 @@
       "archived": false,
       "pushed_at": "2026-06-11T09:36:41Z",
       "updated_at": "2026-06-11T09:36:46Z"
-    },
-    {
-      "name": "frankguodev.github.io",
-      "full_name": "frankguodev/frankguodev.github.io",
-      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
-      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
-      "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "private": false,
-      "fork": false,
-      "archived": false,
-      "pushed_at": "2026-06-11T05:00:56Z",
-      "updated_at": "2026-06-11T05:00:59Z"
     },
     {
       "name": "webcraft-skills",
