@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T20:28:34.702Z",
+  "generatedAt": "2026-06-13T04:54:21.592Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-06-12T15:43:02Z",
-      "updated_at": "2026-06-12T15:43:07Z"
+      "pushed_at": "2026-06-12T20:28:35Z",
+      "updated_at": "2026-06-12T20:28:39Z"
     },
     {
       "name": "zhizhi.xyz",
@@ -1012,19 +1012,6 @@
       "id": "11845457280",
       "type": "PushEvent",
       "created_at": "2026-05-14T09:22:15Z",
-      "repo": {
-        "id": 1233659507,
-        "name": "frankguodev/frankguodev.github.io",
-        "url": "https://api.github.com/repos/frankguodev/frankguodev.github.io"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "11806453150",
-      "type": "PushEvent",
-      "created_at": "2026-05-13T14:35:18Z",
       "repo": {
         "id": 1233659507,
         "name": "frankguodev/frankguodev.github.io",
