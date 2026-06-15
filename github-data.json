@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T12:45:01.284Z",
+  "generatedAt": "2026-06-15T21:25:34.892Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -12,20 +12,6 @@
   },
   "repos": [
     {
-      "name": "frankguodev.github.io",
-      "full_name": "frankguodev/frankguodev.github.io",
-      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
-      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
-      "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "private": false,
-      "fork": false,
-      "archived": false,
-      "pushed_at": "2026-06-15T05:30:40Z",
-      "updated_at": "2026-06-15T05:30:43Z"
-    },
-    {
       "name": "zhizhi.xyz",
       "full_name": "frankguodev/zhizhi.xyz",
       "html_url": "https://github.com/frankguodev/zhizhi.xyz",
@@ -36,8 +22,22 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-06-14T11:20:31Z",
-      "updated_at": "2026-06-14T11:20:35Z"
+      "pushed_at": "2026-06-15T12:48:48Z",
+      "updated_at": "2026-06-15T12:48:52Z"
+    },
+    {
+      "name": "frankguodev.github.io",
+      "full_name": "frankguodev/frankguodev.github.io",
+      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
+      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-06-15T12:45:02Z",
+      "updated_at": "2026-06-15T12:45:07Z"
     },
     {
       "name": "webcraft-skills",
@@ -69,6 +69,19 @@
     }
   ],
   "events": [
+    {
+      "id": "13348947784",
+      "type": "PushEvent",
+      "created_at": "2026-06-15T12:48:49Z",
+      "repo": {
+        "id": 1234351374,
+        "name": "frankguodev/zhizhi.xyz",
+        "url": "https://api.github.com/repos/frankguodev/zhizhi.xyz"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
     {
       "id": "13301571614",
       "type": "PushEvent",
@@ -903,27 +916,14 @@
       "payload": {
         "commits": []
       }
-    },
-    {
-      "id": "9538001117",
-      "type": "PublicEvent",
-      "created_at": "2026-05-16T00:48:02Z",
-      "repo": {
-        "id": 1240282801,
-        "name": "frankguodev/webcraft-skills",
-        "url": "https://api.github.com/repos/frankguodev/webcraft-skills"
-      },
-      "payload": {
-        "commits": []
-      }
     }
   ],
   "recentCommits": [
     {
       "repo": "frankguodev/zhizhi.xyz",
       "html_url": "https://github.com/frankguodev/zhizhi.xyz",
-      "count": 47,
-      "latest_at": "2026-06-14T11:20:18Z"
+      "count": 48,
+      "latest_at": "2026-06-15T12:48:36Z"
     },
     {
       "repo": "frankguodev/frankguodev.github.io",
