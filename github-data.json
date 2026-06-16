@@ -1,16 +1,30 @@
 {
-  "generatedAt": "2026-06-16T05:37:24.156Z",
+  "generatedAt": "2026-06-16T11:36:50.772Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
     "name": "之之小侠",
     "avatar_url": "https://avatars.githubusercontent.com/u/283070267?v=4",
     "html_url": "https://github.com/frankguodev",
-    "public_repos": 4,
+    "public_repos": 5,
     "followers": 2,
     "following": 6
   },
   "repos": [
+    {
+      "name": "claude-credit-audit",
+      "full_name": "frankguodev/claude-credit-audit",
+      "html_url": "https://github.com/frankguodev/claude-credit-audit",
+      "description": "Forecast which Claude calls in your repo burn Agent SDK credit after the 2026-06-15 billing change — scans your CI, claude -p, and claude-code-action to predict monthly cost, the burn-out day, and savings before your credit runs out.",
+      "language": "Python",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-06-16T10:51:07Z",
+      "updated_at": "2026-06-16T10:51:11Z"
+    },
     {
       "name": "frankguodev.github.io",
       "full_name": "frankguodev/frankguodev.github.io",
@@ -22,8 +36,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-06-15T21:25:35Z",
-      "updated_at": "2026-06-15T21:25:39Z"
+      "pushed_at": "2026-06-16T05:37:24Z",
+      "updated_at": "2026-06-16T05:37:28Z"
     },
     {
       "name": "zhizhi.xyz",
@@ -69,6 +83,111 @@
     }
   ],
   "events": [
+    {
+      "id": "13401771543",
+      "type": "PushEvent",
+      "created_at": "2026-06-16T10:51:08Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "10746016402",
+      "type": "ReleaseEvent",
+      "created_at": "2026-06-16T09:39:37Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "13398282713",
+      "type": "PushEvent",
+      "created_at": "2026-06-16T09:35:00Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "13397940611",
+      "type": "PushEvent",
+      "created_at": "2026-06-16T09:27:41Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "13396926679",
+      "type": "PushEvent",
+      "created_at": "2026-06-16T09:06:00Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "10742236002",
+      "type": "ReleaseEvent",
+      "created_at": "2026-06-16T08:11:51Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "10741643947",
+      "type": "PublicEvent",
+      "created_at": "2026-06-16T00:32:44Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "commits": []
+      }
+    },
+    {
+      "id": "13379384479",
+      "type": "CreateEvent",
+      "created_at": "2026-06-16T00:39:41Z",
+      "repo": {
+        "id": 1270681972,
+        "name": "frankguodev/claude-credit-audit",
+        "url": "https://api.github.com/repos/frankguodev/claude-credit-audit"
+      },
+      "payload": {
+        "ref_type": "branch",
+        "commits": []
+      }
+    },
     {
       "id": "13348947784",
       "type": "PushEvent",
@@ -936,6 +1055,12 @@
       "html_url": "https://github.com/frankguodev/webcraft-skills",
       "count": 20,
       "latest_at": "2026-06-12T01:58:08Z"
+    },
+    {
+      "repo": "frankguodev/claude-credit-audit",
+      "html_url": "https://github.com/frankguodev/claude-credit-audit",
+      "count": 6,
+      "latest_at": "2026-06-16T10:50:59Z"
     }
   ]
 }
