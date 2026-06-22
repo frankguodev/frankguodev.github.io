@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T20:06:02.339Z",
+  "generatedAt": "2026-06-22T05:33:35.857Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -11,6 +11,20 @@
     "following": 6
   },
   "repos": [
+    {
+      "name": "frankguodev.github.io",
+      "full_name": "frankguodev/frankguodev.github.io",
+      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
+      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-06-21T20:06:03Z",
+      "updated_at": "2026-06-21T20:06:06Z"
+    },
     {
       "name": "zhizhi.xyz",
       "full_name": "frankguodev/zhizhi.xyz",
@@ -24,20 +38,6 @@
       "archived": false,
       "pushed_at": "2026-06-21T15:27:09Z",
       "updated_at": "2026-06-21T15:27:13Z"
-    },
-    {
-      "name": "frankguodev.github.io",
-      "full_name": "frankguodev/frankguodev.github.io",
-      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
-      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
-      "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "private": false,
-      "fork": false,
-      "archived": false,
-      "pushed_at": "2026-06-21T14:34:58Z",
-      "updated_at": "2026-06-21T14:35:02Z"
     },
     {
       "name": "claude-credit-audit",
