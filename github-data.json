@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T10:16:54.342Z",
+  "generatedAt": "2026-07-01T15:14:19.143Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -11,6 +11,20 @@
     "following": 6
   },
   "repos": [
+    {
+      "name": "frankguodev.github.io",
+      "full_name": "frankguodev/frankguodev.github.io",
+      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
+      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "private": false,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-07-01T10:16:55Z",
+      "updated_at": "2026-07-01T10:16:59Z"
+    },
     {
       "name": "zhizhi.xyz",
       "full_name": "frankguodev/zhizhi.xyz",
@@ -24,20 +38,6 @@
       "archived": false,
       "pushed_at": "2026-07-01T09:25:25Z",
       "updated_at": "2026-07-01T09:25:29Z"
-    },
-    {
-      "name": "frankguodev.github.io",
-      "full_name": "frankguodev/frankguodev.github.io",
-      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
-      "description": "A quiet personal website for an independent builder working with AI, software, writing, and long-term digital systems.",
-      "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "private": false,
-      "fork": false,
-      "archived": false,
-      "pushed_at": "2026-07-01T04:55:58Z",
-      "updated_at": "2026-07-01T04:56:01Z"
     },
     {
       "name": "webcraft-skills",
@@ -621,19 +621,6 @@
       "id": "12646904281",
       "type": "PushEvent",
       "created_at": "2026-06-01T09:59:07Z",
-      "repo": {
-        "id": 1234351374,
-        "name": "frankguodev/zhizhi.xyz",
-        "url": "https://api.github.com/repos/frankguodev/zhizhi.xyz"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "12638101620",
-      "type": "PushEvent",
-      "created_at": "2026-06-01T06:14:27Z",
       "repo": {
         "id": 1234351374,
         "name": "frankguodev/zhizhi.xyz",
