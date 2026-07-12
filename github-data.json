@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T08:32:34.567Z",
+  "generatedAt": "2026-07-12T13:58:12.399Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-07-12T04:01:38Z",
-      "updated_at": "2026-07-12T04:01:43Z"
+      "pushed_at": "2026-07-12T08:32:35Z",
+      "updated_at": "2026-07-12T08:32:39Z"
     },
     {
       "name": "zhizhi.xyz",
@@ -365,58 +365,6 @@
         "id": 1234351374,
         "name": "frankguodev/zhizhi.xyz",
         "url": "https://api.github.com/repos/frankguodev/zhizhi.xyz"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "10595127603",
-      "type": "PullRequestEvent",
-      "created_at": "2026-06-12T02:04:44Z",
-      "repo": {
-        "id": 1240282801,
-        "name": "frankguodev/webcraft-skills",
-        "url": "https://api.github.com/repos/frankguodev/webcraft-skills"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "13200845342",
-      "type": "PushEvent",
-      "created_at": "2026-06-12T01:58:10Z",
-      "repo": {
-        "id": 1240282801,
-        "name": "frankguodev/webcraft-skills",
-        "url": "https://api.github.com/repos/frankguodev/webcraft-skills"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "10594977547",
-      "type": "PullRequestEvent",
-      "created_at": "2026-06-12T01:58:09Z",
-      "repo": {
-        "id": 1240282801,
-        "name": "frankguodev/webcraft-skills",
-        "url": "https://api.github.com/repos/frankguodev/webcraft-skills"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "13200823820",
-      "type": "PushEvent",
-      "created_at": "2026-06-12T01:57:26Z",
-      "repo": {
-        "id": 1240282801,
-        "name": "frankguodev/webcraft-skills",
-        "url": "https://api.github.com/repos/frankguodev/webcraft-skills"
       },
       "payload": {
         "commits": []
