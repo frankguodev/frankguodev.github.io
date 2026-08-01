@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T03:53:59.442Z",
+  "generatedAt": "2026-08-01T08:35:09.683Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-07-31T19:55:20Z",
-      "updated_at": "2026-07-31T19:55:24Z"
+      "pushed_at": "2026-08-01T03:54:00Z",
+      "updated_at": "2026-08-01T03:54:13Z"
     },
     {
       "name": "AntsCarryBricks",
@@ -206,32 +206,6 @@
       "id": "14212670367",
       "type": "PushEvent",
       "created_at": "2026-07-02T06:52:45Z",
-      "repo": {
-        "id": 1234351374,
-        "name": "frankguodev/zhizhi.xyz",
-        "url": "https://api.github.com/repos/frankguodev/zhizhi.xyz"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "14199590140",
-      "type": "PushEvent",
-      "created_at": "2026-07-02T00:08:43Z",
-      "repo": {
-        "id": 1234351374,
-        "name": "frankguodev/zhizhi.xyz",
-        "url": "https://api.github.com/repos/frankguodev/zhizhi.xyz"
-      },
-      "payload": {
-        "commits": []
-      }
-    },
-    {
-      "id": "14198984113",
-      "type": "PushEvent",
-      "created_at": "2026-07-01T23:48:52Z",
       "repo": {
         "id": 1234351374,
         "name": "frankguodev/zhizhi.xyz",
