@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T19:02:38.446Z",
+  "generatedAt": "2026-08-25T01:54:45.065Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-08-24T13:16:22Z",
-      "updated_at": "2026-08-24T13:27:20Z"
+      "pushed_at": "2026-08-24T19:02:40Z",
+      "updated_at": "2026-08-24T19:07:01Z"
     },
     {
       "name": "AntsCarryBricks",
@@ -116,20 +116,20 @@
     {
       "repo": "frankguodev/zhizhi.xyz",
       "html_url": "https://github.com/frankguodev/zhizhi.xyz",
-      "count": 47,
+      "count": 46,
       "latest_at": "2026-07-14T13:32:43Z"
-    },
-    {
-      "repo": "frankguodev/webcraft-skills",
-      "html_url": "https://github.com/frankguodev/webcraft-skills",
-      "count": 6,
-      "latest_at": "2026-06-24T08:57:50Z"
     },
     {
       "repo": "frankguodev/claude-credit-audit",
       "html_url": "https://github.com/frankguodev/claude-credit-audit",
       "count": 6,
       "latest_at": "2026-06-16T10:50:59Z"
+    },
+    {
+      "repo": "frankguodev/webcraft-skills",
+      "html_url": "https://github.com/frankguodev/webcraft-skills",
+      "count": 5,
+      "latest_at": "2026-06-24T08:57:50Z"
     },
     {
       "repo": "frankguodev/frankguodev.github.io",
