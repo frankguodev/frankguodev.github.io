@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T20:07:06.911Z",
+  "generatedAt": "2026-08-27T09:56:33.403Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-08-26T13:25:07Z",
-      "updated_at": "2026-08-26T13:32:59Z"
+      "pushed_at": "2026-08-26T20:07:08Z",
+      "updated_at": "2026-08-26T20:50:24Z"
     },
     {
       "name": "AntsCarryBricks",
@@ -116,7 +116,7 @@
     {
       "repo": "frankguodev/zhizhi.xyz",
       "html_url": "https://github.com/frankguodev/zhizhi.xyz",
-      "count": 44,
+      "count": 42,
       "latest_at": "2026-07-14T13:32:43Z"
     },
     {
@@ -130,12 +130,6 @@
       "html_url": "https://github.com/frankguodev/webcraft-skills",
       "count": 3,
       "latest_at": "2026-06-24T08:57:50Z"
-    },
-    {
-      "repo": "frankguodev/frankguodev.github.io",
-      "html_url": "https://github.com/frankguodev/frankguodev.github.io",
-      "count": 2,
-      "latest_at": "2026-05-29T07:39:21Z"
     },
     {
       "repo": "frankguodev/AntsCarryBricks",
