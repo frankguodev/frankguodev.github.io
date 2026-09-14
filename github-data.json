@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T05:03:34.052Z",
+  "generatedAt": "2026-09-14T12:57:51.442Z",
   "source": "github-actions-cache",
   "user": {
     "login": "frankguodev",
@@ -22,8 +22,8 @@
       "private": false,
       "fork": false,
       "archived": false,
-      "pushed_at": "2026-09-13T20:54:17Z",
-      "updated_at": "2026-09-13T20:54:21Z"
+      "pushed_at": "2026-09-14T05:03:35Z",
+      "updated_at": "2026-09-14T05:03:38Z"
     },
     {
       "name": "AntsCarryBricks",
@@ -103,12 +103,6 @@
       "html_url": "https://github.com/frankguodev/zhizhi.xyz",
       "count": 13,
       "latest_at": "2026-07-14T13:32:43Z"
-    },
-    {
-      "repo": "frankguodev/claude-credit-audit",
-      "html_url": "https://github.com/frankguodev/claude-credit-audit",
-      "count": 5,
-      "latest_at": "2026-06-16T10:50:59Z"
     },
     {
       "repo": "frankguodev/AntsCarryBricks",
